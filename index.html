@@ -99,12 +99,33 @@
                     <a href="#" onclick="showPage('interest')" class="text-white hover:text-warm-ochre font-medium">Get Notified</a>
                     <a href="https://instagram.com/theronintoymaker" target="_blank" class="text-white hover:text-warm-ochre font-medium underline">Follow Us!</a>
                 </div>
-                <button class="bg-deep-teal text-white px-4 py-2 rounded-full font-bold hover:bg-teal-700 transition-all transform hover:scale-110" onclick="showPage('interest')">
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-warm-ochre focus:outline-none" onclick="toggleMobileMenu()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <button class="hidden md:block bg-deep-teal text-white px-4 py-2 rounded-full font-bold hover:bg-teal-700 transition-all transform hover:scale-110" onclick="showPage('interest')">
                     Get Notified
                 </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile menu dropdown -->
+    <div id="mobile-menu" class="md:hidden bg-deep-teal hidden">
+        <div class="px-6 pt-2 pb-4 space-y-3">
+            <a href="#" onclick="showPage('home'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
+            <a href="#" onclick="showPage('about'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">About Ruby</a>
+            <a href="#" onclick="showPage('cats'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">The Research Team</a>
+            <a href="#" onclick="showPage('interest'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">Get Notified</a>
+            <a href="https://instagram.com/theronintoymaker" target="_blank" class="block text-white hover:text-warm-ochre font-medium py-2 underline">Follow Us!</a>
+        </div>
+    </div>
 
     <!-- HOME PAGE -->
     <div id="home" class="page active">
@@ -167,7 +188,7 @@
                     <!-- Product 2 -->
                     <div class="bg-white rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:-rotate-1 clickable shadow-lg" onclick="expandToy('rover')">
                         <div class="aspect-square bg-deep-teal rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group">
-                            <div class="text-white text-6xl float-dance">🭀</div>
+                            <div class="text-white text-6xl float-dance">🭠</div>
                             <div class="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-20 transition-opacity"></div>
                             <div class="absolute bottom-4 left-4 bg-white text-gray-800 px-3 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                                 ▶ Precision hunting
@@ -237,7 +258,7 @@
                     </div>
                     
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">🐱</div>
+                        <div class="text-4xl mb-4">🱠</div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 4: Test</h3>
                         <p class="text-gray-600 font-medium">Present to focus group (the cats). Await verdict via strategic destruction or dignified approval.</p>
                     </div>
@@ -399,7 +420,7 @@
                         <div class="bg-white rounded-3xl p-8 shadow-lg border-l-8 border-deep-teal">
                             <div class="flex items-center mb-6">
                                 <div class="w-20 h-20 bg-deep-teal rounded-full flex items-center justify-center mr-4">
-                                    <div class="text-3xl">🐱</div>
+                                    <div class="text-3xl">🱠</div>
                                 </div>
                                 <div>
                                     <span class="bg-deep-teal text-white px-3 py-1 rounded-full text-sm font-black uppercase">Cooperative Hunter</span>
@@ -474,7 +495,7 @@
                                 </div>
                             </div>
                             <h2 class="text-4xl font-black text-gray-800 mb-2">Subject: Zelda</h2>
-                            <p class="text-gray-600 font-medium mb-6">Age: 7.5 Earth Years • Status: Senior Research Fellow in Applied Precision</p>
+                            <p class="text-gray-600 font-medium mb-6">Age: 7.5 Earth Years • Status: Senior Research Fellow in Applied Precision </p>
                             <div class="space-y-4 text-gray-600 font-medium">
                                 <p>
                                     <strong>Primary Research Focus:</strong> The mathematical perfection of live prey simulation. 
@@ -673,7 +694,7 @@
             rover: {
                 name: "Rover", 
                 price: "₹3,000",
-                emoji: "🭀",
+                emoji: "🭠",
                 tagline: "For quantum hunting experiments",
                 story: "A modified micro mouse engineered to Zelda's exacting specifications for live prey simulation. Her research focuses on the precise mathematics of pursuit—the exact angle of approach, the optimal unpredictability ratio, the perfect moment of engagement. She evaluates each autonomous sequence with the cool detachment of a master critic, demanding nothing less than perfection in every movement pattern.",
                 bg: "bg-deep-teal"
@@ -748,21 +769,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        function playBounce(el) {
-            el.classList.add('bounce-play');
-            setTimeout(() => el.classList.remove('bounce-play'), 2000);
-        }
-
-        function playWiggle(el) {
-            el.classList.add('wiggle-wild');
-            setTimeout(() => el.classList.remove('wiggle-wild'), 1500);
-        }
-
-        function playFloat(el) {
-            el.classList.add('float-dance');
-            setTimeout(() => el.classList.remove('float-dance'), 3000);
-        }
-
         function playVideo(el) {
             el.style.transform = 'scale(1.1) rotate(360deg)';
             el.style.transition = 'transform 0.8s ease-out';
@@ -800,6 +806,16 @@
                     style.remove();
                 }, 3000);
             }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.add('hidden');
         }
     </script>
 </body>
