@@ -5,31 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronin Toys - We Take Play Seriously</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Material Symbols for methodology section icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        
                         'deep-teal': '#2D5A5A',
                         'warm-ochre': '#CC8E35', 
                         'electric-coral': '#FF6B6B',
                         'sage-green': '#87A96B',
                         'warm-cream': '#FFF8E7',
                         'soft-gray': '#6B7280',
-                       
                         'e-blue' : '#4A9EFF',
                         'teal-feels' : '#1fa0b6',
                         'purple' :  '#7850a9',
-                       
                         'bluey-blue': '#4A90E2',
                         'bluey-yellow': '#F4D03F', 
                         'bluey-orange': '#FF8C42',
                         'bluey-green': '#7CB342',
-                        'warm-cream': '#FFF8E7',
-                        'soft-gray': '#6B7280',
-
-
                     }
                 }
             }
@@ -84,6 +79,14 @@
         .page.active {
             display: block;
         }
+
+        .latin-fade {
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .latin-fade.fade-out {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-warm-cream text-gray-800 overflow-x-hidden">
@@ -133,7 +136,7 @@
         <section class="min-h-screen bg-bluey-orange flex items-center relative overflow-hidden">
             <!-- Floating elements -->
            <div class="absolute top-20 left-20 w-16 h-16 bg-e-blue rounded-full float-dance opacity-80"></div>
-           <div class="absolute top-40 right-32 w-12 h-12 bg-warm-cream rounded-full float-dance opacity-70" style="animation-delay: 1s;"></div>
+           <div class="absolute top-40 right-32 w-12 h-12 bg-yellow-100 rounded-full float-dance opacity-70" style="animation-delay: 1s;"></div>
             <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-purple rounded-full float-dance opacity-70" style="animation-delay: 2s;"></div>
             
             <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
@@ -154,8 +157,6 @@
                             We make toys for cats, humans, and anyone else who believes that they should be busy having fun.
                         </p>
                     </div>
-
-
                 </div>
             </div>
         </section>
@@ -188,7 +189,7 @@
                     <!-- Product 2 -->
                     <div class="bg-white rounded-3xl p-8 transform hover:scale-105 transition-all duration-500 hover:-rotate-1 clickable shadow-lg" onclick="expandToy('rover')">
                         <div class="aspect-square bg-deep-teal rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group">
-                            <div class="text-white text-6xl float-dance">🭠</div>
+                            <div class="text-white text-6xl float-dance">🭀</div>
                             <div class="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-20 transition-opacity"></div>
                             <div class="absolute bottom-4 left-4 bg-white text-gray-800 px-3 py-1 rounded-full text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                                 ▶ Precision hunting
@@ -230,7 +231,7 @@
             </div>
         </section>
 
-        <!-- Research Methodology -->
+        <!-- Research Methodology - ICONS UPGRADED -->
         <section class="bg-electric-coral py-20">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -240,37 +241,49 @@
                 
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">🔬</div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-electric-coral rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">science</span>
+                        </div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 1: Observe</h3>
                         <p class="text-gray-600 font-medium">Take notes when cats play with you properly.</p>
                     </div>
                     
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">💡</div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-warm-ochre rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">lightbulb</span>
+                        </div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 2: Hypothesize</h3>
                         <p class="text-gray-600 font-medium">When something works, ask 'Ok what if this BUT MORE?'</p>
                     </div>
                     
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">🔧</div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-sage-green rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">construction</span>
+                        </div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 3: Build</h3>
                         <p class="text-gray-600 font-medium">Create prototypes using questionable engineering decisions.</p>
                     </div>
                     
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">🱠</div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-purple rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">pets</span>
+                        </div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 4: Test</h3>
                         <p class="text-gray-600 font-medium">Present to focus group. Await verdict of strategic destruction or dignified approval.</p>
                     </div>
                     
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">🔄</div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-deep-teal rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">sync</span>
+                        </div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 5: Iterate</h3>
                         <p class="text-gray-600 font-medium">Adjust based on feline feedback. Aim for Perfect Chaos™ certification.</p>
                     </div>
                     
                     <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                        <div class="text-4xl mb-4">🎉</div>
+                        <div class="w-16 h-16 mx-auto mb-4 bg-electric-coral rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">celebration</span>
+                        </div>
                         <h3 class="text-2xl font-black text-gray-800 mb-4">Step 6: Release</h3>
                         <p class="text-gray-600 font-medium">Share with the world, then wait for everyone else's cats to judge you.</p>
                     </div>
@@ -321,7 +334,7 @@
                     Ready?
                 </h2>
                 <div class="space-y-4">
-                    <button class="bg-warm-ochre text-white px-12 py-6 rounded-full font-black text-2xl hover:bg-yellow-600 transition-all transform hover:scale-110 clickable" onclick="showPage('interest')">
+                    <button class="bg-orange-500 text-white px-12 py-6 rounded-full font-black text-2xl hover:bg-orange-600 transition-all transform hover:scale-110 clickable" onclick="showPage('interest')">
                         Let's Play →
                     </button>
                     <p class="text-white text-lg font-medium">
@@ -346,52 +359,34 @@
                         <div class="bg-white rounded-3xl p-8 shadow-lg">
                             <h2 class="text-3xl font-black text-gray-800 mb-6">The Story So Far</h2>
                             <div class="space-y-4 text-gray-600 font-medium leading-relaxed">
-                                <p>
-                                    It started with three cats who had very specific opinions about their entertainment.</p>
-                                    <p> 
-                                        <b>
-                                     Gwilo </b>wanted something cooperative. What kept him interested in play, was his playmate's engagement.</p>
-                                      <p>
-
-                                    <b>Zelda</b> demanded something that made her fully lean into the Hunter-Queen that she is.</p>
-                                      <p>
-                                        <b>Cloud</b> needed a spark of randomness that caught his attention and was somehow consistently interesting enough to keep it.</p>
-                                    <p>Play is essential and effortless. That's what I learned from playing with intelligent beings, like cats.</p>
-                                They don't need instructions; they need toys that respond to their 
-                                natural instincts,  and engage them accordingly.
-                                </p>
-                                <p>
-                                    Traditional toys weren't cutting it: they either bored my cats instantly, or lasted about as long as my attention span during a conference call on a Friday evening. 
-                                </p>
-                                <p>
-                                    So I started making toys. Not because I had some grand vision of disrupting 
-                                    the pet industry, but because three very persuasive cats made it clear that 
-                                    their current entertainment options were inadequate.</p>
-
-                                  <p>Now that I'm making these toys, I guess I can accept orders from your overlords too.</p>
-                           
-                              
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
-                            <div class="w-32 h-32 bg-warm-ochre rounded-full mx-auto mb-6 flex items-center justify-center">
-                                <div class="text-5xl">👤</div>
+                                <p>It started with three cats who had very specific opinions about their entertainment.</p>
+                                <p><b>Gwilo</b> wanted something cooperative. What kept him interested in play, was his playmate's engagement.</p>
+                                <p><b>Zelda</b> demanded something that made her fully lean into the Hunter-Queen that she is.</p>
+                                <p><b>Cloud</b> needed a spark of randomness that caught his attention and was somehow consistently interesting enough to keep it.</p>
+                                <p>Play is essential and effortless. That's what I learned from playing with intelligent beings, like cats. They don't need instructions; they need toys that respond to their natural instincts, and engage them accordingly.</p>
+                                <p>Traditional toys weren't cutting it: they either bored my cats instantly, or lasted about as long as my attention span during a conference call on a Friday evening.</p>
+                                <p>So I started making toys. Not because I had some grand vision of disrupting the pet industry, but because three very persuasive cats made it clear that their current entertainment options were inadequate.</p>
+                                <p>Now that I'm making these toys, I guess I can accept orders from your overlords too.</p>
                             </div>
-                            <h3 class="text-2xl font-black text-gray-800 mb-2">Ruby</h3>
-                            <p class="text-gray-600 font-medium mb-4">aka @ruphilka</p>
-                            <p class="text-gray-600 font-medium">
-                                Professional cat servant, occasional human
-                            </p>
                         </div>
 
-                    
-                        <div class="text-center">
-                            <a href="https://instagram.com/theronintoymaker" target="_blank" class="bg-purple text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 inline-block">
-                                Follow the Journey →
-                            </a>
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
+                                <div class="w-32 h-32 bg-warm-ochre rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                                    <img src="images/ruby.jpg" alt="Ruby - Professional cat servant" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-black text-gray-800 mb-2">Ruby</h3>
+                                <p class="text-gray-600 font-medium mb-4">aka @ruphilka</p>
+                                <p class="text-gray-600 font-medium">
+                                    Professional cat servant, occasional human
+                                </p>
+                            </div>
+                        
+                            <div class="text-center">
+                                <a href="https://instagram.com/theronintoymaker" target="_blank" class="bg-purple text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 inline-block">
+                                    Follow the Journey →
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -405,19 +400,21 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <h1 class="text-6xl font-black text-gray-800 mb-8">Field Notes from R&D</h1>
-                    <p class="text-2xl text-gray-600 font-medium">"Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
+                    <p id="latin-subtitle" class="text-2xl text-gray-600 font-medium latin-fade">"Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
                 </div>
 
                 <!-- Gwilo -->
                 <div class="mb-20">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="bg-white rounded-3xl p-8 shadow-lg border-l-8 border-purple">
-                            <div class="flex items-center mb-6">
-                                <div class="w-20 h-20 bg-purple rounded-full flex items-center justify-center mr-4">
-                                    <div class="text-3xl">🱠</div>
+                            <div class="flex items-start mb-6 space-x-6">
+                                <div class="flex-shrink-0">
+                                    <div class="w-48 h-48 bg-gradient-to-br from-purple via-electric-coral to-warm-ochre rounded-full overflow-hidden shadow-lg ring-4 ring-purple ring-opacity-20">
+                                        <img src="images/gwilo.jpg" alt="Gwilo - Senior Research Fellow in Applied Mischief" class="w-full h-full object-cover">
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="bg-purple text-white px-3 py-1 rounded-full text-sm font-black uppercase">Cooperative Hunter</span>
+                                <div class="flex-grow pt-2">
+                                    <span class="bg-purple text-white px-4 py-2 rounded-full text-sm font-black uppercase mb-3 inline-block">Cooperative Hunter</span>
                                 </div>
                             </div>
                             <h2 class="text-4xl font-black text-gray-800 mb-2">Name: Gwilo</h2>
@@ -438,16 +435,14 @@
                             <h3 class="text-3xl font-black text-white mb-6">Current Project: Reelin</h3>
                             <div class="space-y-4 text-white font-medium">
                                 <p>
-                                    
                                     An organic fishing apparatus developed in collaboration with Gwilo. Made from bamboo that 
                                     grew up wanting to be a fishing rod, paired with a line that asks for no judgement when it breaks.
-                                
                                 </p>
                                 <p>
-                                    <strong>Technical Specifications:</strong>  Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play.
+                                    <strong>Technical Specifications:</strong> Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play.
                                 </p>
-                                <p class="text-warm-ochre font-bold italic">
-                                    "Finally, a human who understands that playing together is the point." — Gwilo
+                                <p class="text-bluey-yellow font-bold italic">
+                                    "Finally, a human who understands that playing together is the point." – Gwilo
                                 </p>
                             </div>
                         </div>
@@ -461,24 +456,23 @@
                             <h3 class="text-3xl font-black text-white mb-6">Current Project: Rover</h3>
                             <div class="space-y-4 text-white font-medium">
                                 <p>
-                                   
-                                    A modified micro mouse engineered to Zelda's standards for live prey simulation, the Rover aims to achieve the mathematical perfection of The Hunt. 
-                                  
-                                
+                                    A modified micro mouse engineered to Zelda's standards for live prey simulation, the Rover aims to achieve the mathematical perfection of The Hunt.
                                 </p>
                                
                                 <p class="text-warm-ochre font-bold italic">
-                                    "It will suffice. For now." — Zelda 
+                                    "It will suffice. For now." – Zelda 
                                 </p>
                             </div>
                         </div>
                         <div class="bg-white rounded-3xl p-8 shadow-lg order-1 md:order-2 border-l-8 border-deep-teal">
-                            <div class="flex items-center mb-6">
-                                <div class="w-20 h-20 bg-deep-teal rounded-full flex items-center justify-center mr-4">
-                                    <div class="text-3xl">👑</div>
+                            <div class="flex items-start mb-6 space-x-6">
+                                <div class="flex-shrink-0">
+                                    <div class="w-48 h-48 bg-gradient-to-br from-deep-teal via-bluey-blue to-sage-green rounded-full overflow-hidden shadow-lg ring-4 ring-deep-teal ring-opacity-20">
+                                        <img src="images/zelda.jpg" alt="Zelda - Chief Perfectionist" class="w-full h-full object-cover">
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="bg-deep-teal text-white px-3 py-1 rounded-full text-sm font-black uppercase">Chief Perfectionist</span>
+                                <div class="flex-grow pt-2">
+                                    <span class="bg-deep-teal text-white px-4 py-2 rounded-full text-sm font-black uppercase mb-3 inline-block">Chief Perfectionist</span>
                                 </div>
                             </div>
                             <h2 class="text-4xl font-black text-gray-800 mb-2">Name: Zelda</h2>
@@ -487,7 +481,6 @@
                                 <p>
                                     <strong>Primary Research Focus:</strong> Zelda's optimal hunting sequence studies focus on the precise mathematics of pursuit—the exact angle of approach, 
                                     the optimal unpredictability ratio for safe scoping, and the timing for a perfect strike.
-                                
                                 </p>
                                
                                 <p>
@@ -498,27 +491,29 @@
                     </div>
                 </div>
 
-                <!-- Crawrdd -->
+                <!-- Cloud -->
                 <div class="mb-20">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="bg-white rounded-3xl p-8 shadow-lg border-l-8 border-electric-coral">
-                            <div class="flex items-center mb-6">
-                                <div class="w-20 h-20 bg-electric-coral rounded-full flex items-center justify-center mr-4">
-                                    <div class="text-3xl">👁️</div>
+                            <div class="flex items-start mb-6 space-x-6">
+                                <div class="flex-shrink-0">
+                                    <div class="w-48 h-48 bg-gradient-to-br from-electric-coral via-bluey-orange to-bluey-yellow rounded-full overflow-hidden shadow-lg ring-4 ring-electric-coral ring-opacity-20">
+                                        <img src="images/cloud.jpg" alt="Alejandro Jojo McCloud - Chaos Specialist" class="w-full h-full object-cover">
+                                    </div>
                                 </div>
-                                <div>
-                                    <span class="bg-electric-coral  text-white px-3 py-1 rounded-full text-sm font-black uppercase">Chaos Specialist</span>
+                                <div class="flex-grow pt-2">
+                                    <span class="bg-electric-coral text-white px-4 py-2 rounded-full text-sm font-black uppercase mb-3 inline-block">Chaos Specialist</span>
                                 </div>
                             </div>
-                            <h2 class="text-4xl font-black text-gray-800 mb-2">Name: Alejandro Jojo McCloud (aka Cloud) </h2>
-                            <p class="text-gray-600 font-medium mb-6">Age: 1.9 Earth Years • Status: Junior Research Fellow </p>
+                            <h2 class="text-4xl font-black text-gray-800 mb-2">Name: Alejandro Jojo McCloud (aka Cloud)</h2>
+                            <p class="text-gray-600 font-medium mb-6">Age: 1.9 Earth Years • Status: Junior Research Fellow</p>
                             <div class="space-y-4 text-gray-600 font-medium">
                                 <p> 
-                                    <strong>Primary Research Focus:</strong>  Is primarily studying
+                                    <strong>Primary Research Focus:</strong> Is primarily studying
                                     the conditions under which 'The Zoomies' occur. One of Cloud's theories is about the fumes emitted during bowel evacuation, and the speed of participants when entering 'The Zoom State'. He hopes to find out how to capitalize on the energy contained within this state.
                                 </p>
                                 
-                                                                <p>
+                                <p>
                                     <strong>Research Philosophy:</strong> "Huh? Wait where was I going? Sorry were you saying something?"
                                 </p>
                             </div>
@@ -534,7 +529,7 @@
                                     <strong>Technical Innovation:</strong> No complicated mechanisms, just physics 
                                     having philosophical disagreements with itself, generating random movements
                                 </p>
-                                <p class="text-bluey-yellow font-bold italic">
+                                <p class="text-orange-800 font-bold italic">
                                     "Hey did that thing... OH MY GOD IT JUST MOVED! I'm going to follow it. Hey where is everyone?" - Cloud (every single time)
                                 </p>
                             </div>
@@ -637,6 +632,33 @@
         </section>
     </div>
 
+    <!-- 404 PAGE -->
+    <div id="404" class="page">
+        <section class="min-h-screen bg-gray-900 flex items-center justify-center py-20">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="mb-12">
+                    <div id="random-cat-container" class="w-80 h-80 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-8 ring-white ring-opacity-20 relative">
+                        <!-- Random cat image will be inserted here -->
+                    </div>
+                    <h1 class="text-8xl font-black text-white mb-4">404</h1>
+                    <h2 class="text-4xl font-black text-electric-coral mb-6">You've disappointed the research team</h2>
+                    <p class="text-xl text-gray-300 font-medium mb-8 max-w-2xl mx-auto">
+                        Even our most qualified researchers couldn't find what you're looking for. 
+                        Perhaps you should reconsider your life choices.
+                    </p>
+                    <div class="space-y-4">
+                        <button onclick="showPage('home')" class="bg-electric-coral text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-600 transition-all transform hover:scale-105 mr-4">
+                            Return to Safety
+                        </button>
+                        <button onclick="showPage('cats')" class="bg-deep-teal text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 transition-all transform hover:scale-105">
+                            Apologize to the Team
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <!-- Product Expansion Modal -->
     <div id="toyModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden z-50 flex items-center justify-center p-6" onclick="closeToy(event)">
         <div class="bg-white rounded-3xl max-w-4xl w-full max-h-screen overflow-y-auto relative shadow-2xl">
@@ -664,7 +686,7 @@
             rover: {
                 name: "Rover", 
                 price: "₹3,000",
-                emoji: "🭠",
+                emoji: "🭀",
                 tagline: "For quantum hunting experiments",
                 story: "A modified micro mouse engineered to Zelda's exacting specifications for live prey simulation. Her research focuses on the precise mathematics of pursuit—the exact angle of approach, the optimal unpredictability ratio, the perfect moment of engagement. She evaluates each autonomous sequence with the cool detachment of a master critic, demanding nothing less than perfection in every movement pattern.",
                 bg: "bg-deep-teal"
@@ -674,7 +696,7 @@
                 price: "₹1,499", 
                 emoji: "⚽",
                 tagline: "For sound-activated velocity studies",
-                story: "Weighted interior creates unpredictable movement patterns based on Crawrdd's research into chaos-focus correlation. Powered entirely by physics having philosophical disagreements with itself, creating sound-triggered movement that activates zoom mode while engaging cognitive processes.",
+                story: "Weighted interior creates unpredictable movement patterns based on Cloud's research into chaos-focus correlation. Powered entirely by physics having philosophical disagreements with itself, creating sound-triggered movement that activates zoom mode while engaging cognitive processes.",
                 bg: "bg-sage-green"
             },
             chatter: {
@@ -687,11 +709,98 @@
             }
         };
 
+        let latinInterval;
+
+        const validPages = ['home', 'about', 'cats', 'interest', '404'];
+        const researchTeam = [
+            {
+                name: 'Gwilo',
+                image: 'images/gwilo404.jpg',
+                title: 'Senior Research Fellow in Applied Mischief',
+                judgment: '"This is what happens when humans venture beyond their capabilities."'
+            },
+            {
+                name: 'Zelda', 
+                image: 'images/zelda404.jpg',
+                title: 'Chief Perfectionist',
+                judgment: '"Your navigation skills require significant improvement."'
+            },
+            {
+                name: 'Cloud',
+                image: 'images/cloud404.jpg', 
+                title: 'Chaos Specialist',
+                judgment: '"Wait, what were we looking for again? Oh right, competence."'
+            }
+        ];
+
         function showPage(pageId) {
+            // Handle invalid page requests
+            if (!validPages.includes(pageId)) {
+                pageId = '404';
+                setupRandomCat();
+            }
+            
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
             document.getElementById(pageId).classList.add('active');
+            
+            // Initialize Latin transition for cats page
+            if (pageId === 'cats') {
+                setTimeout(initLatinTransition, 100);
+            } else {
+                // Clear interval when leaving cats page
+                if (latinInterval) {
+                    clearInterval(latinInterval);
+                    latinInterval = null;
+                }
+            }
+        }
+
+        function setupRandomCat() {
+            const randomCat = researchTeam[Math.floor(Math.random() * researchTeam.length)];
+            const container = document.getElementById('random-cat-container');
+            
+            container.innerHTML = `
+                <img src="${randomCat.image}" alt="${randomCat.name} - ${randomCat.title}" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 text-white">
+                    <p class="font-bold text-lg">${randomCat.name}</p>
+                    <p class="text-sm opacity-80">${randomCat.title}</p>
+                </div>
+            `;
+            
+            // Add the judgment quote to the page
+            const existingQuote = document.querySelector('.cat-judgment');
+            if (existingQuote) existingQuote.remove();
+            
+            const quote = document.createElement('p');
+            quote.className = 'cat-judgment text-lg text-gray-300 font-medium italic mt-4';
+            quote.textContent = randomCat.judgment;
+            container.parentElement.appendChild(quote);
+        }
+
+        function initLatinTransition() {
+            const latinElement = document.getElementById('latin-subtitle');
+            if (!latinElement || latinInterval) return;
+            
+            const phrases = [
+                "Humani intelligentes sunt, sed assidua vigilantia indigent",
+                "Humans are intelligent, but require constant supervision"
+            ];
+            let currentIndex = 0;
+            
+            function switchText() {
+                latinElement.classList.add('fade-out');
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % phrases.length;
+                    latinElement.textContent = `"${phrases[currentIndex]}"`;
+                    latinElement.classList.remove('fade-out');
+                }, 500);
+            }
+            
+            // Switch every 6 seconds
+            latinInterval = setInterval(switchText, 6000);
         }
 
         function expandToy(toyKey) {
