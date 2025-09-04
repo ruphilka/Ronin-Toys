@@ -136,7 +136,7 @@
         <section class="min-h-screen bg-bluey-orange flex items-center relative overflow-hidden">
             <!-- Floating elements -->
            <div class="absolute top-20 left-20 w-16 h-16 bg-e-blue rounded-full float-dance opacity-80"></div>
-           <div class="absolute top-40 right-32 w-12 h-12 bg-yellow-100 rounded-full float-dance opacity-70" style="animation-delay: 1s;"></div>
+           <div class="absolute top-40 right-32 w-12 h-12 bg-warm-cream rounded-full float-dance opacity-70" style="animation-delay: 1s;"></div>
             <div class="absolute bottom-32 left-1/4 w-20 h-20 bg-purple rounded-full float-dance opacity-70" style="animation-delay: 2s;"></div>
             
             <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
@@ -441,7 +441,7 @@
                                 <p>
                                     <strong>Technical Specifications:</strong> Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play.
                                 </p>
-                                <p class="text-bluey-yellow font-bold italic">
+                                <p class="text-warm-ochre font-bold italic">
                                     "Finally, a human who understands that playing together is the point." – Gwilo
                                 </p>
                             </div>
@@ -529,7 +529,7 @@
                                     <strong>Technical Innovation:</strong> No complicated mechanisms, just physics 
                                     having philosophical disagreements with itself, generating random movements
                                 </p>
-                                <p class="text-orange-800 font-bold italic">
+                                <p class="text-bluey-yellow font-bold italic">
                                     "Hey did that thing... OH MY GOD IT JUST MOVED! I'm going to follow it. Hey where is everyone?" - Cloud (every single time)
                                 </p>
                             </div>
@@ -632,33 +632,6 @@
         </section>
     </div>
 
-    <!-- 404 PAGE -->
-    <div id="404" class="page">
-        <section class="min-h-screen bg-gray-900 flex items-center justify-center py-20">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <div class="mb-12">
-                    <div id="random-cat-container" class="w-80 h-80 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-8 ring-white ring-opacity-20 relative">
-                        <!-- Random cat image will be inserted here -->
-                    </div>
-                    <h1 class="text-8xl font-black text-white mb-4">404</h1>
-                    <h2 class="text-4xl font-black text-electric-coral mb-6">You've disappointed the research team</h2>
-                    <p class="text-xl text-gray-300 font-medium mb-8 max-w-2xl mx-auto">
-                        Even our most qualified researchers couldn't find what you're looking for. 
-                        Perhaps you should reconsider your life choices.
-                    </p>
-                    <div class="space-y-4">
-                        <button onclick="showPage('home')" class="bg-electric-coral text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-600 transition-all transform hover:scale-105 mr-4">
-                            Return to Safety
-                        </button>
-                        <button onclick="showPage('cats')" class="bg-deep-teal text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 transition-all transform hover:scale-105">
-                            Apologize to the Team
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
     <!-- Product Expansion Modal -->
     <div id="toyModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden z-50 flex items-center justify-center p-6" onclick="closeToy(event)">
         <div class="bg-white rounded-3xl max-w-4xl w-full max-h-screen overflow-y-auto relative shadow-2xl">
@@ -715,19 +688,19 @@
         const researchTeam = [
             {
                 name: 'Gwilo',
-                image: 'images/gwilo404.jpg',
+                image: 'images/gwilo.jpg',
                 title: 'Senior Research Fellow in Applied Mischief',
                 judgment: '"This is what happens when humans venture beyond their capabilities."'
             },
             {
                 name: 'Zelda', 
-                image: 'images/zelda404.jpg',
+                image: 'images/zelda.jpg',
                 title: 'Chief Perfectionist',
                 judgment: '"Your navigation skills require significant improvement."'
             },
             {
                 name: 'Cloud',
-                image: 'images/cloud404.jpg', 
+                image: 'images/cloud.jpg', 
                 title: 'Chaos Specialist',
                 judgment: '"Wait, what were we looking for again? Oh right, competence."'
             }
@@ -756,6 +729,36 @@
                 }
             }
         }
+
+        // Check for 404 redirect from GitHub Pages
+        function checkFor404Redirect() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('404')) {
+                showPage('404');
+                // Clean up the URL without refreshing - because proper URLs matter
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkFor404Redirect();
+        });
+
+        // Check for 404 redirect from GitHub Pages
+        function checkFor404Redirect() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('404')) {
+                showPage('404');
+                // Clean up the URL without refreshing
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkFor404Redirect();
+        });
 
         function setupRandomCat() {
             const randomCat = researchTeam[Math.floor(Math.random() * researchTeam.length)];

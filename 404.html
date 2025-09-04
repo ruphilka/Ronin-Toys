@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Research Team Disappointed | Ronin Toys</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-teal': '#2D5A5A',
+                        'electric-coral': '#FF6B6B',
+                        'purple': '#7850a9',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; }
+        
+        .gentle-float {
+            animation: gentle-float 3s ease-in-out infinite;
+        }
+        
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+        <!-- Random Cat Photo -->
+        <div id="cat-container" class="w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden shadow-xl ring-4 ring-electric-coral ring-opacity-30">
+            <!-- Cat image will be inserted here -->
+        </div>
+        
+        <h1 class="text-6xl font-black text-white mb-4 gentle-float">404</h1>
+        <h2 class="text-2xl font-bold text-electric-coral mb-6">Research Team Consultation Required</h2>
+        
+        <div id="cat-judgment" class="mb-8 bg-gray-800 rounded-xl p-6 border border-electric-coral border-opacity-20">
+            <!-- Dynamic judgment will be inserted here -->
+        </div>
+        
+        <div class="space-y-4 mb-8">
+            <a href="/" class="bg-electric-coral text-white px-6 py-3 rounded-full font-bold hover:bg-red-600 transition-all transform hover:scale-105 inline-block mr-4">
+                Return to Lab
+            </a>
+            <a href="/#cats" class="bg-deep-teal text-white px-6 py-3 rounded-full font-bold hover:bg-teal-700 transition-all transform hover:scale-105 inline-block">
+                Meet the Team
+            </a>
+        </div>
+        
+        <p class="text-gray-400 text-sm">
+            Redirecting in <span id="countdown">5</span> seconds...
+        </p>
+    </div>
+
+    <script>
+        const researchTeam = [
+            {
+                name: 'Gwilo',
+                image: 'images/gwilo404.jpg',
+                title: 'Senior Research Fellow',
+                judgment: '"Perhaps you should stick to tasks more suited to your skill level. Like opening cans."'
+            },
+            {
+                name: 'Zelda', 
+                image: 'images/zelda404.jpg',
+                title: 'Chief Perfectionist',
+                judgment: '"This level of navigation incompetence is... concerning. I recommend additional training."'
+            },
+            {
+                name: 'Cloud',
+                image: 'images/cloud404.jpg', 
+                title: 'Chaos Specialist',
+                judgment: '"Wait, you got lost? But there are only like five pages... Oh. OH. That\'s actually impressive."'
+            }
+        ];
+
+        function setupRandomCat() {
+            const randomCat = researchTeam[Math.floor(Math.random() * researchTeam.length)];
+            const container = document.getElementById('cat-container');
+            const judgment = document.getElementById('cat-judgment');
+            
+            container.innerHTML = `
+                <img src="${randomCat.image}" alt="${randomCat.name}" class="w-full h-full object-cover">
+            `;
+            
+            judgment.innerHTML = `
+                <p class="text-lg font-medium mb-2">${randomCat.name}, ${randomCat.title}</p>
+                <p class="text-gray-300 italic">${randomCat.judgment}</p>
+            `;
+        }
+
+        // Countdown and redirect
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.replace('/');
+            }
+        }, 1000);
+
+        // Initialize
+        setupRandomCat();
+    </script>
+</body>
+</html>
