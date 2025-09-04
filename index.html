@@ -120,7 +120,7 @@
     </nav>
 
     <!-- Mobile menu dropdown -->
-    <div id="mobile-menu" class="md:hidden bg-deep-teal hidden">
+    <div id="mobile-menu" class="md:hidden bg-deep-teal hidden fixed top-16 left-0 right-0 z-40 shadow-lg">
         <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
             <a href="#home" onclick="router.goTo('home'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
             <a href="#about" onclick="router.goTo('about'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">About Ruby</a>
@@ -133,9 +133,9 @@
     <!-- HOME PAGE -->
     <div id="home" class="page">
         <!-- Hero -->
-        <section class="min-h-screen bg-bluey-orange flex items-center relative">
+        <section class="min-h-screen bg-bluey-orange flex items-center relative overflow-hidden">
             <!-- Floating elements - hidden on mobile to reduce clutter -->
-           <div class="hidden md:block absolute top-20 left-20 w-16 h-16 bg-e-blue rounded-full float-dance opacity-80"></div>
+           <div class="hidden md:block absolute top-20 left-20 w-16 h-16 bg-deep-teal rounded-full float-dance opacity-80"></div>
            <div class="hidden md:block absolute top-40 right-32 w-12 h-12 bg-yellow-200 rounded-full float-dance opacity-70" style="animation-delay: 1s;"></div>
             <div class="hidden md:block absolute bottom-32 left-1/4 w-20 h-20 bg-purple rounded-full float-dance opacity-70" style="animation-delay: 2s;"></div>
             
@@ -439,7 +439,7 @@
                                 <p>
                                     <strong>Technical Specifications:</strong> Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play.
                                 </p>
-                                <p class="text-bluey-yellow font-bold italic">
+                                <p class="text-orange-400 font-bold italic">
                                     "Finally, a human who understands that playing together is the point." – Gwilo
                                 </p>
                             </div>
@@ -515,13 +515,13 @@
                         <div class="bg-electric-coral rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-2">
                             <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 sm:mb-6">Current Project: Rollin' Ronin</h3>
                             <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
-                       <p>
+                                <p>
                                     A weighted apparatus that creates unpredictable movement patterns based on Cloud's research 
-                                    into chaos. Where some minds are overwhelmed by randomness, others need it to engage.
+                                    into chaos-focus correlation. Where some minds are overwhelmed by randomness, others need it to engage.
                                 </p>
                                 <p>
-                                    <strong>Technical Innovation:</strong> How much ball, that much smart. If the Ronin were any more baller, we'd call it our drunk uncle busting out dance moves at a wedding. Perfect for minds that have a direct connection to chaos.
-                                    
+                                    <strong>Technical Innovation:</strong> No complicated mechanisms, just physics 
+                                    having philosophical disagreements with itself, generating random movements
                                 </p>
                                 <p class="text-orange-800 font-bold italic">
                                     "Hey did that thing... OH MY GOD IT JUST MOVED! I'm going to follow it. Hey where is everyone?" - Cloud (every single time)
