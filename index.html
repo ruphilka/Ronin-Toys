@@ -5,24 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronin Toys - We Take Play Seriously</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Material Symbols for methodology section icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Montserrat+Alternates:wght@400;700&family=Epilogue:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        'title': ['"Chelsea Market"', 'cursive'],
+                        'subtitle': ['"Montserrat Alternates"', 'sans-serif'],
+                        'body': ['"Epilogue"', 'sans-serif'],
+                    },
                     colors: {
                         'deep-teal': '#2D5A5A',
-                        'warm-ochre': '#CC8E35', 
+                        'warm-ochre': '#CC8E35',
                         'electric-coral': '#FF6B6B',
                         'sage-green': '#87A96B',
                         'warm-cream': '#FFF8E7',
                         'soft-gray': '#6B7280',
-                        'e-blue' : '#4A9EFF',
-                        'teal-feels' : '#1fa0b6',
-                        'purple' :  '#7850a9',
+                        'e-blue': '#4A9EFF',
+                        'teal-feels': '#1fa0b6',
+                        'purple': '#7850a9',
                         'bluey-blue': '#4A90E2',
-                        'bluey-yellow': '#F4D03F', 
+                        'bluey-yellow': '#F4D03F',
                         'bluey-orange': '#FF8C42',
                         'bluey-green': '#7CB342',
                     }
@@ -31,66 +39,58 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; }
-        
+        h1, h2, h3, h4, h5, h6 { font-family: 'Chelsea Market', cursive; }
+        .subtitle, .font-subtitle { font-family: 'Montserrat Alternates', sans-serif; }
+        body { font-family: 'Epilogue', sans-serif; }
         .float-dance { animation: float-dance 4s ease-in-out infinite; }
         @keyframes float-dance {
             0%, 100% { transform: translateY(0px) rotateZ(0deg); }
             33% { transform: translateY(-15px) rotateZ(3deg); }
             66% { transform: translateY(10px) rotateZ(-2deg); }
         }
-        
         .bounce-play { animation: bounce-play 2s ease-in-out infinite; }
         @keyframes bounce-play {
             0%, 100% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.05) rotate(180deg); }
         }
-        
         .wiggle-wild { animation: wiggle-wild 1.5s ease-in-out infinite; }
         @keyframes wiggle-wild {
             0%, 100% { transform: rotate(0deg); }
             25% { transform: rotate(3deg); }
             75% { transform: rotate(-3deg); }
         }
-        
         .clickable:hover { cursor: grab; }
         .clickable:active { cursor: grabbing; transform: scale(0.95); }
-        
         .page { display: none; }
         .page.active { display: block; }
-
         .latin-fade { transition: opacity 0.5s ease-in-out; }
         .latin-fade.fade-out { opacity: 0; }
-        
         #scroll-nav button {
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            opacity: 0.8; 
+            opacity: 0.8;
         }
         #scroll-nav button:hover {
-            opacity: 1; 
+            opacity: 1;
         }
         #scroll-nav button.hidden {
             opacity: 0;
             pointer-events: none;
             transform: translateY(10px);
         }
-
         .boop-text {
             position: absolute;
             top: -20px;
             left: 50%;
             font-size: 2.5rem;
             font-weight: 900;
-            color: #FF6B6B; /* electric-coral */
-            -webkit-text-stroke: 2px #FFF8E7; /* warm-cream */
-            text-shadow: 3px 3px 0 #2D5A5A; /* deep-teal */
+            color: #FF6B6B;
+            -webkit-text-stroke: 2px #FFF8E7;
+            text-shadow: 3px 3px 0 #2D5A5A;
             animation: boop-effect 1s ease-out forwards;
             pointer-events: none;
             z-index: 20;
             white-space: nowrap;
         }
-
         @keyframes boop-effect {
             0% { transform: translateX(-50%) translateY(10px) scale(0.5); opacity: 0; }
             30% { transform: translateX(-50%) translateY(-10px) scale(1.1); opacity: 1; }
@@ -98,63 +98,53 @@
             80% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
             100% { transform: translateX(-50%) translateY(-20px) scale(0.8); opacity: 0; }
         }
-
-        /* --- Cat Flipper Animation --- */
         .cat-flipper-container {
+            position: relative;
             perspective: 1000px;
             cursor: pointer;
         }
-
         .cat-flipper {
             transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
             transform-style: preserve-3d;
         }
-
         .cat-flipper-container.is-flipped .cat-flipper {
             transform: rotateY(180deg);
         }
-
         .cat-face {
             position: absolute;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
+            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
         }
-
         .cat-back {
             transform: rotateY(180deg);
         }
-
         .cat-back img {
-            border-radius: 50%; /* Makes the real photo circular */
-            border: 8px solid #FFF8E7; /* warm-cream */
+            border-radius: 50%;
+            border: 8px solid #FFF8E7;
             box-shadow: 0 5px 20px rgba(0,0,0,0.25);
         }
-
-        /* --- Profile Highlight on Scroll --- */
         #cats .highlight-cat {
             transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
-            box-shadow: 0 0 0 8px #CC8E35; /* warm-ochre */
-            border-radius: 1.5rem; /* Matches the rounded-3xl class */
+            box-shadow: 0 0 0 8px #CC8E35;
+            border-radius: 1.5rem;
             transform: scale(1.02);
         }
     </style>
 </head>
 <body class="bg-warm-cream text-gray-800 overflow-x-hidden">
-    <!-- Nav: Now sticky as you scroll -->
     <nav class="bg-purple sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-16">
-                <h1 class="text-white font-black text-2xl cursor-pointer" onclick="router.goTo('home')">Ronin Toys</h1>
+                <h1 class="text-white text-2xl cursor-pointer" onclick="router.goTo('home')">Ronin Toys</h1>
                 <div class="hidden md:flex space-x-6">
                     <a href="#home" onclick="router.goTo('home')" class="text-white hover:text-warm-ochre font-medium">Home</a>
                     <a href="#products" onclick="router.goTo('products')" class="text-white hover:text-warm-ochre font-medium">Products</a>
                     <a href="#about" onclick="router.goTo('about')" class="text-white hover:text-warm-ochre font-medium">About Ruby</a>
                     <a href="#cats" onclick="router.goTo('cats')" class="text-white hover:text-warm-ochre font-medium">The Research Team</a>
-                    <a href="https://instagram.com/theronintoymaker" target="_blank" class="text-white hover:text-warm-ochre font-medium underline">Follow Us!</a>
+                    <a href="https://instagram.com/theronintoymaker" target="_blank" class="text-white hover:text-warm-ochre font-medium underline inline-flex items-center gap-1"><i class="fab fa-instagram"></i><span>Follow Us!</span></a>
                 </div>
-                
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-white hover:text-warm-ochre focus:outline-none" onclick="toggleMobileMenu()">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +152,6 @@
                         </svg>
                     </button>
                 </div>
-                
                 <button class="hidden md:block bg-deep-teal text-white px-4 py-2 rounded-full font-bold hover:bg-teal-700 transition-all transform hover:scale-110" onclick="router.goTo('interest')">
                     Get Notified
                 </button>
@@ -170,7 +159,6 @@
         </div>
     </nav>
 
-    <!-- Mobile menu dropdown -->
     <div id="mobile-menu" class="md:hidden bg-deep-teal hidden">
         <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
             <a href="#home" onclick="router.goTo('home'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
@@ -178,79 +166,64 @@
             <a href="#about" onclick="router.goTo('about'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">About Ruby</a>
             <a href="#cats" onclick="router.goTo('cats'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">The Research Team</a>
             <a href="#interest" onclick="router.goTo('interest'); closeMobileMenu()" class="block text-white hover:text-warm-ochre font-medium py-2">Get Notified</a>
-            <a href="https://instagram.com/theronintoymaker" target="_blank" class="block text-white hover:text-warm-ochre font-medium py-2 underline">Follow Us!</a>
+            <a href="https://instagram.com/theronintoymaker" target="_blank" class="block text-white hover:text-warm-ochre font-medium py-2 underline inline-flex items-center gap-1"><i class="fab fa-instagram"></i><span>Follow Us!</span></a>
         </div>
     </div>
 
-    <!-- HOME PAGE -->
     <div id="home" class="page">
-        <!-- Hero: Background changed to electric-coral -->
         <section class="min-h-screen bg-electric-coral flex items-center relative overflow-hidden">
-            <!-- Zelda Image -->
             <div data-cat-target="zelda-section" class="cat-flipper-container absolute top-16 -left-12 sm:-left-8 md:top-1/4 md:left-20 w-48 h-48 md:w-64 md:h-64 float-dance">
                 <div class="cat-flipper relative w-full h-full">
-                    <!-- Front Face (Character) -->
                     <div class="cat-face cat-front opacity-40 md:opacity-100">
                         <img src="images/zelda_nobg.png" alt="Zelda the cat character" class="w-full h-full object-contain cursor-pointer">
                     </div>
-                    <!-- Back Face (Real Cat) -->
                     <div class="cat-face cat-back opacity-40 md:opacity-100">
                         <img src="images/zelda.jpg" alt="The real Zelda, a majestic cat" class="w-full h-full object-cover cursor-pointer">
                     </div>
                 </div>
             </div>
-            <!-- Cloud Image -->
             <div data-cat-target="cloud-section" class="cat-flipper-container absolute top-24 -right-12 sm:-right-8 md:top-1/3 md:right-32 w-48 h-48 md:w-64 md:h-64 float-dance" style="animation-delay: 1s;">
                  <div class="cat-flipper relative w-full h-full">
-                    <!-- Front Face (Character) -->
                     <div class="cat-face cat-front opacity-40 md:opacity-100">
                         <img src="images/cloud_nobg.png" alt="Cloud the cat character" class="w-full h-full object-contain cursor-pointer">
                     </div>
-                    <!-- Back Face (Real Cat) -->
                     <div class="cat-face cat-back opacity-40 md:opacity-100">
                         <img src="images/cloud.jpg" alt="The real Cloud, a fluffy cat" class="w-full h-full object-cover cursor-pointer">
                     </div>
                 </div>
             </div>
-            <!-- Gwilo Image -->
             <div data-cat-target="gwilo-section" class="cat-flipper-container absolute bottom-8 -left-12 sm:left-10 w-48 h-48 md:w-64 md:h-64 float-dance" style="animation-delay: 2s;">
                  <div class="cat-flipper relative w-full h-full">
-                    <!-- Front Face (Character) -->
                     <div class="cat-face cat-front opacity-40 md:opacity-100">
                         <img src="images/gwi_nobg.png" alt="Playful cat character Gwilo" class="w-full h-full object-contain cursor-pointer">
                     </div>
-                    <!-- Back Face (Real Cat) -->
                     <div class="cat-face cat-back opacity-40 md:opacity-100">
                         <img src="images/gwilo.jpg" alt="The real Gwilo, a handsome cat" class="w-full h-full object-cover cursor-pointer">
                     </div>
                 </div>
             </div>
-            
             <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
                 <div class="text-center space-y-8 sm:space-y-12">
-                    <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-gray-800 leading-none">
-                        We take <br> <span class="text-purple wiggle-wild inline-block">play</span> <br> seriously
+                    <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-800 leading-none">
+                        We take <br> <span class="text-bluey-yellow wiggle-wild inline-block">play</span> <br> seriously
                     </h2>
                     <div class="max-w-2xl mx-auto space-y-4 sm:space-y-6">
-                        <p class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">Because the world's full enough of un-fun things.</p>
+                        <p class="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 font-subtitle">Because the world's full enough of un-fun things.</p>
                         <p class="text-base sm:text-lg md:text-xl text-gray-700 font-medium">We make toys for cats, humans, and anyone else who believes that they should be busy having fun.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Products: Now a Carousel -->
         <section class="bg-warm-cream py-16 sm:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 mb-4 wiggle-wild">The Chaos Collection</h2>
-                    <p class="text-lg sm:text-xl text-gray-600 font-medium">Designed by cats, for cats (and their humans)</p>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl text-gray-800 mb-4 wiggle-wild">The Chaos Collection</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 font-medium font-subtitle">Designed by cats, for cats (and their humans)</p>
                 </div>
-                
                 <div class="max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto relative">
                     <div id="product-carousel" class="overflow-hidden">
                         <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out">
-                            <!-- Slides will be dynamically generated here -->
                         </div>
                     </div>
                     <button id="prev-btn" class="absolute top-1/2 -translate-y-1/2 left-0 -translate-x-8 md:-translate-x-12 bg-white/80 hover:bg-white text-purple rounded-full p-2 shadow-lg z-10 transition-all">
@@ -263,129 +236,111 @@
             </div>
         </section>
 
-        <!-- Research Methodology -->
-        <section class="bg-electric-coral py-16 sm:py-20">
+        <section class="bg-bluey-orange py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">Our Scientific Approach</h2>
-                    <p class="text-lg sm:text-xl text-white font-medium">Rigorous methodology for maximum chaos</p>
+                    <h2 class="text-4xl sm:text-5xl md:text-6xl text-white mb-6">Our Scientific Approach</h2>
+                    <p class="text-lg sm:text-xl text-white font-medium font-subtitle">Rigorous methodology for maximum chaos</p>
                 </div>
-                
-                <!-- Mobile Infographic -->
                 <div class="sm:hidden flex flex-col items-center">
-                    <!-- Step 1 -->
                     <div class="flex items-center w-full max-w-sm space-x-4">
                         <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-electric-coral text-3xl">science</span></div>
                         <div>
-                            <h3 class="text-xl font-black text-white">Step 1: Observe</h3>
+                            <h3 class="text-xl text-white">Step 1: Observe</h3>
                             <p class="text-sm text-white font-medium">Take notes when cats play with you properly.</p>
                         </div>
                     </div>
-                    <!-- Arrow -->
                     <div class="h-12 w-16 flex justify-center"><span class="material-symbols-outlined text-white text-4xl">south</span></div>
-                    <!-- Step 2 -->
                     <div class="flex items-center w-full max-w-sm space-x-4">
                          <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-warm-ochre text-3xl">lightbulb</span></div>
                         <div>
-                            <h3 class="text-xl font-black text-white">Step 2: Hypothesize</h3>
+                            <h3 class="text-xl text-white">Step 2: Hypothesize</h3>
                             <p class="text-sm text-white font-medium">When something works, ask 'Ok what if this BUT MORE?'</p>
                         </div>
                     </div>
-                    <!-- Arrow -->
                     <div class="h-12 w-16 flex justify-center"><span class="material-symbols-outlined text-white text-4xl">south</span></div>
-                    <!-- Step 3 -->
                     <div class="flex items-center w-full max-w-sm space-x-4">
                         <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-sage-green text-3xl">construction</span></div>
                         <div>
-                            <h3 class="text-xl font-black text-white">Step 3: Build</h3>
+                            <h3 class="text-xl text-white">Step 3: Build</h3>
                             <p class="text-sm text-white font-medium">Create prototypes using questionable engineering decisions.</p>
                         </div>
                     </div>
-                    <!-- Arrow -->
                     <div class="h-12 w-16 flex justify-center"><span class="material-symbols-outlined text-white text-4xl">south</span></div>
-                    <!-- Step 4 -->
                      <div class="flex items-center w-full max-w-sm space-x-4">
                         <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-purple text-3xl">pets</span></div>
                         <div>
-                            <h3 class="text-xl font-black text-white">Step 4: Test</h3>
+                            <h3 class="text-xl text-white">Step 4: Test</h3>
                             <p class="text-sm text-white font-medium">Present to focus group. Await verdict.</p>
                         </div>
                     </div>
-                    <!-- Arrow -->
                     <div class="h-12 w-16 flex justify-center"><span class="material-symbols-outlined text-white text-4xl">south</span></div>
-                    <!-- Step 5 -->
                     <div class="flex items-center w-full max-w-sm space-x-4">
                         <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-deep-teal text-3xl">sync</span></div>
                         <div>
-                            <h3 class="text-xl font-black text-white">Step 5: Iterate</h3>
+                            <h3 class="text-xl text-white">Step 5: Iterate</h3>
                             <p class="text-sm text-white font-medium">Adjust based on feline feedback.</p>
                         </div>
                     </div>
-                    <!-- Arrow -->
                     <div class="h-12 w-16 flex justify-center"><span class="material-symbols-outlined text-white text-4xl">south</span></div>
-                    <!-- Step 6 -->
                      <div class="flex items-center w-full max-w-sm space-x-4">
                         <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center"><span class="material-symbols-outlined text-electric-coral text-3xl">celebration</span></div>
                         <div>
-                            <h3 class="text-xl font-black text-white">Step 6: Release</h3>
+                            <h3 class="text-xl text-white">Step 6: Release</h3>
                             <p class="text-sm text-white font-medium">Share with the world, await judgment.</p>
                         </div>
                     </div>
                 </div>
-
-
-                <!-- Desktop Grid -->
                 <div class="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center">
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-electric-coral rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-2xl sm:text-3xl">science</span></div>
-                        <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-4">Step 1: Observe</h3>
+                        <h3 class="text-xl sm:text-2xl text-gray-800 mb-4">Step 1: Observe</h3>
                         <p class="text-sm sm:text-base text-gray-600 font-medium">Take notes when cats play with you properly.</p>
                     </div>
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center">
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-warm-ochre rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-2xl sm:text-3xl">lightbulb</span></div>
-                        <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-4">Step 2: Hypothesize</h3>
+                        <h3 class="text-xl sm:text-2xl text-gray-800 mb-4">Step 2: Hypothesize</h3>
                         <p class="text-sm sm:text-base text-gray-600 font-medium">When something works, ask 'Ok what if this BUT MORE?'</p>
                     </div>
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center sm:col-span-2 lg:col-span-1">
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-sage-green rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-2xl sm:text-3xl">construction</span></div>
-                        <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-4">Step 3: Build</h3>
+                        <h3 class="text-xl sm:text-2xl text-gray-800 mb-4">Step 3: Build</h3>
                         <p class="text-sm sm:text-base text-gray-600 font-medium">Create prototypes using questionable engineering decisions.</p>
                     </div>
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center">
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-purple rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-2xl sm:text-3xl">pets</span></div>
-                        <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-4">Step 4: Test</h3>
+                        <h3 class="text-xl sm:text-2xl text-gray-800 mb-4">Step 4: Test</h3>
                         <p class="text-sm sm:text-base text-gray-600 font-medium">Present to focus group. Await verdict of strategic destruction or dignified approval.</p>
                     </div>
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center">
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-deep-teal rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-2xl sm:text-3xl">sync</span></div>
-                        <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-4">Step 5: Iterate</h3>
+                        <h3 class="text-xl sm:text-2xl text-gray-800 mb-4">Step 5: Iterate</h3>
                         <p class="text-sm sm:text-base text-gray-600 font-medium">Adjust based on feline feedback. Aim for Perfect Chaos™ certification.</p>
                     </div>
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center sm:col-span-2 lg:col-span-1">
                         <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 bg-electric-coral rounded-2xl flex items-center justify-center"><span class="material-symbols-outlined text-white text-2xl sm:text-3xl">celebration</span></div>
-                        <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-4">Step 6: Release</h3>
+                        <h3 class="text-xl sm:text-2xl text-gray-800 mb-4">Step 6: Release</h3>
                         <p class="text-sm sm:text-base text-gray-600 font-medium">Share with the world, then wait for everyone else's cats to judge you.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Events -->
-        <section class="bg-deep-teal py-16 sm:py-20">
+        <section class="bg-bluey-blue py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                <div class="text-center mb-12 sm:mb-16"><h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">Catch us in the wild</h2></div>
+                <div class="text-center mb-12 sm:mb-16"><h2 class="text-4xl sm:text-5xl md:text-6xl text-white mb-6">Catch us in the wild</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
                         <div class="flex items-center space-x-3 mb-4">
                             <div class="w-4 h-4 bg-electric-coral rounded-full bounce-play"></div><span class="text-electric-coral font-black text-sm uppercase">Next Stop</span>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-black text-gray-800 mb-2">India FOSS</h3>
+                        <h3 class="text-2xl sm:text-3xl text-gray-800 mb-2">India FOSS</h3>
                         <p class="text-sm sm:text-base text-gray-700 font-bold mb-2">September 20-21</p>
                         <p class="text-sm sm:text-base text-gray-600 mb-6">NIMHANS, Bengaluru</p>
                         <button class="bg-sage-green text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all transform hover:scale-105">Find us there →</button>
                     </div>
                     <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                        <h3 class="text-2xl sm:text-3xl font-black text-gray-800 mb-6">Coming Soon</h3>
+                        <h3 class="text-2xl sm:text-3xl text-gray-800 mb-6">Coming Soon</h3>
                         <div class="space-y-3">
                             <p class="text-sm sm:text-base text-gray-700 font-bold">HRI 2025 • Melbourne</p>
                             <p class="text-sm sm:text-base text-gray-700 font-bold">Green Schools • Orlando</p>
@@ -397,44 +352,31 @@
             </div>
         </section>
 
-        <!-- Simple CTA -->
-        <section class="bg-deep-teal py-16 sm:py-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-8 float-dance">Ready?</h2>
-                <div class="space-y-4">
-                    <button class="bg-orange-500 text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full font-black text-xl sm:text-2xl hover:bg-orange-600 transition-all transform hover:scale-110 clickable" onclick="router.goTo('interest')">Let's Play →</button>
-                    <p class="text-base sm:text-lg text-white font-medium">Follow our journey <a href="https://instagram.com/theronintoymaker" target="_blank" class="underline hover:text-warm-ochre">@theronintoymaker</a></p>
-                </div>
-            </div>
-        </section>
     </div>
-    
-    <!-- PRODUCTS PAGE: Background changed to bluey-orange -->
+
     <div id="products" class="page">
         <section class="min-h-screen bg-bluey-orange py-16 sm:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 mb-8">The Chaos Collection</h1>
-                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium">Toys for discerning connoisseurs of chaos</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-800 mb-8">The Chaos Collection</h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium font-subtitle">Toys for discerning connoisseurs of chaos</p>
                 </div>
-                <!-- Product details will be injected here by JavaScript -->
                 <div id="product-list" class="space-y-12"></div>
             </div>
         </section>
     </div>
 
-    <!-- ABOUT RUBY PAGE -->
     <div id="about" class="page">
         <section class="min-h-screen bg-sage-green py-16 sm:py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 mb-8">About Ruby</h1>
-                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium">The human behind the chaos</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-800 mb-8">About Ruby</h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium font-subtitle">The human behind the chaos</p>
                 </div>
                 <div class="grid grid-cols-1 items-center">
                     <div class="space-y-6 sm:space-y-8">
                         <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                            <h2 class="text-2xl sm:text-3xl font-black text-gray-800 mb-6">The Story So Far</h2>
+                            <h2 class="text-2xl sm:text-3xl text-gray-800 mb-6">The Story So Far</h2>
                             <div class="space-y-4 text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                                 <p>It started with three cats who had very specific opinions about their entertainment.</p>
                                 <p><b>Gwilo</b> wanted something cooperative. What kept him interested in play, was his playmate's engagement.</p>
@@ -448,9 +390,9 @@
                         </div>
                         <div class="space-y-6">
                             <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-center">
-                                <div class="w-24 h-24 sm:w-32 sm:h-32 bg-warm-ochre rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden"><img src="https://placehold.co/128x128/CC8E35/FFF8E7?text=Ruby" alt="Ruby - Professional cat servant" class="w-full h-full object-cover"></div>
-                                <h3 class="text-xl sm:text-2xl font-black text-gray-800 mb-2">Ruby</h3>
-                                <p class="text-sm sm:text-base text-gray-600 font-medium mb-4">aka @ruphilka</p>
+                                <div class="w-24 h-24 sm:w-32 sm:h-32 bg-warm-ochre rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden"><img src="images/ruby.jpg" alt="Ruby - Professional cat servant" class="w-full h-full object-cover"></div>
+                                <h3 class="text-xl sm:text-2xl text-gray-800 mb-2">Ruby</h3>
+                                <p class="text-sm sm:text-base text-gray-600 font-medium mb-4 font-subtitle">aka @ruphilka</p>
                                 <p class="text-sm sm:text-base text-gray-600 font-medium">Professional cat servant, occasional human</p>
                             </div>
                             <div class="text-center">
@@ -463,24 +405,32 @@
         </section>
     </div>
 
-    <!-- CATS PAGE -->
     <div id="cats" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 mb-8">Field Notes from R&D</h1>
-                    <p id="latin-subtitle" class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium latin-fade">"Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-800 mb-8">Field Notes from R&D</h1>
+                    <p id="latin-subtitle" class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium latin-fade font-subtitle">"Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
                 </div>
-                <!-- Gwilo -->
                 <div id="gwilo-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-purple">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
-                                <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-purple via-electric-coral to-warm-ochre rounded-full overflow-hidden shadow-lg ring-2 sm:ring-4 ring-purple ring-opacity-20"><img src="https://placehold.co/160x160/7850a9/FFFFFF?text=Gwilo" alt="Gwilo - Senior Research Fellow" class="w-full h-full object-cover"></div><span class="bg-purple text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Cooperative Hunter</span>
+                                <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
+                                    <div class="cat-flipper relative w-full h-full">
+                                        <div class="cat-face cat-front">
+                                            <img src="images/gwi_nobg.png" alt="Playful cat character Gwilo" class="w-full h-full object-contain">
+                                        </div>
+                                        <div class="cat-face cat-back">
+                                            <img src="images/gwilo.jpg" alt="The real Gwilo, a handsome cat" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="bg-purple text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Cooperative Hunter</span>
                             </div>
                             <div class="text-center lg:text-left">
-                                <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 mb-2">Gwilo</h2>
-                                <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6">Age: ~8 Earth Years • Senior Research Fellow in Applied Mischief</p>
+                                <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-2">Gwilo</h2>
+                                <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6 font-subtitle">Age: ~8 Earth Years • Senior Research Fellow in Applied Mischief</p>
                                 <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
                                     <p><strong>Primary Research Focus:</strong> Gwilo operates on the revolutionary principle that cooperation between species is not only possible but essential for maximum chaos achievement. Currently investigating the correlation between teamwork and fun.</p>
                                     <p><strong>Research Philosophy:</strong> "If it doesn't invite participation, what's the point?"</p>
@@ -488,7 +438,7 @@
                             </div>
                         </div>
                         <div class="bg-purple rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 sm:mb-6">Current Project: Reelin</h3>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Reelin</h3>
                             <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
                                 <p>An organic fishing apparatus developed in collaboration with Gwilo. Made from bamboo that grew up wanting to be a fishing rod, paired with a line that asks for no judgement when it breaks.</p>
                                 <p><strong>Technical Specifications:</strong> Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play.</p>
@@ -497,11 +447,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Zelda -->
                 <div id="zelda-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-deep-teal rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-1">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 sm:mb-6">Current Project: Rover</h3>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Rover</h3>
                             <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
                                 <p>A modified micro mouse engineered to Zelda's standards for live prey simulation, the Rover aims to achieve the mathematical perfection of The Hunt.</p>
                                 <p class="text-warm-ochre font-bold italic">"It will suffice. For now." – Zelda</p>
@@ -509,11 +458,21 @@
                         </div>
                         <div class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-deep-teal order-1 lg:order-2">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
-                                <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-deep-teal via-bluey-blue to-sage-green rounded-full overflow-hidden shadow-lg ring-2 sm:ring-4 ring-deep-teal ring-opacity-20"><img src="https://placehold.co/160x160/2D5A5A/FFFFFF?text=Zelda" alt="Zelda - Chief Perfectionist" class="w-full h-full object-cover"></div><span class="bg-deep-teal text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Chief Perfectionist</span>
+                                <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
+                                    <div class="cat-flipper relative w-full h-full">
+                                        <div class="cat-face cat-front">
+                                            <img src="images/zelda_nobg.png" alt="Zelda the cat character" class="w-full h-full object-contain">
+                                        </div>
+                                        <div class="cat-face cat-back">
+                                            <img src="images/zelda.jpg" alt="The real Zelda, a majestic cat" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="bg-deep-teal text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Chief Perfectionist</span>
                             </div>
                             <div class="text-center lg:text-left">
-                                <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 mb-2">Zelda</h2>
-                                <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6">Age: 7.5 Earth Years • Senior Research Fellow in Applied Precision</p>
+                                <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-2">Zelda</h2>
+                                <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6 font-subtitle">Age: 7.5 Earth Years • Senior Research Fellow in Applied Precision</p>
                                 <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
                                     <p><strong>Primary Research Focus:</strong> Zelda's optimal hunting sequence studies focus on the precise mathematics of pursuit—the exact angle of approach, the optimal unpredictability ratio for safe scoping, and the timing for a perfect strike.</p>
                                     <p><strong>Research Philosophy:</strong> "If it doesn't please me, it has no business existing in my vicinity."</p>
@@ -522,16 +481,25 @@
                         </div>
                     </div>
                 </div>
-                <!-- Cloud -->
                 <div id="cloud-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-electric-coral">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
-                                <div class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-electric-coral via-bluey-orange to-bluey-yellow rounded-full overflow-hidden shadow-lg ring-2 sm:ring-4 ring-electric-coral ring-opacity-20"><img src="https://placehold.co/160x160/FF6B6B/FFFFFF?text=Cloud" alt="Alejandro Jojo McCloud - Chaos Specialist" class="w-full h-full object-cover"></div><span class="bg-electric-coral text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Chaos Specialist</span>
+                                <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
+                                    <div class="cat-flipper relative w-full h-full">
+                                        <div class="cat-face cat-front">
+                                            <img src="images/cloud_nobg.png" alt="Cloud the cat character" class="w-full h-full object-contain">
+                                        </div>
+                                        <div class="cat-face cat-back">
+                                            <img src="images/cloud.jpg" alt="The real Cloud, a fluffy cat" class="w-full h-full object-cover">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="bg-electric-coral text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Chaos Specialist</span>
                             </div>
                             <div class="text-center lg:text-left">
-                                <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-gray-800 mb-2">Alejandro Jojo McCloud (aka Cloud)</h2>
-                                <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6">Age: 1.9 Earth Years • Junior Research Fellow</p>
+                                <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-2">Alejandro Jojo McCloud (aka Cloud)</h2>
+                                <p class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6 font-subtitle">Age: 1.9 Earth Years • Junior Research Fellow</p>
                                 <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
                                     <p><strong>Primary Research Focus:</strong> Is primarily studying the conditions under which 'The Zoomies' occur. One of Cloud's theories is about the fumes emitted during bowel evacuation, and the speed of participants when entering 'The Zoom State'. He hopes to find out how to capitalize on the energy contained within this state.</p>
                                     <p><strong>Research Philosophy:</strong> "Huh? Wait where was I going? Sorry were you saying something?"</p>
@@ -539,7 +507,7 @@
                             </div>
                         </div>
                         <div class="bg-electric-coral rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-2">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 sm:mb-6">Current Project: Rollin' Ronin</h3>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Rollin' Ronin</h3>
                             <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
                                 <p>A weighted apparatus that creates unpredictable movement patterns based on Cloud's research into chaos. Where some minds are overwhelmed by randomness, others need it to engage.</p>
                                 <p><strong>Technical Innovation:</strong> How much ball, that much smart. If the Ronin were any more baller, we'd call it our drunk uncle busting out dance moves at a wedding. Perfect for minds that have a direct connection to chaos.</p>
@@ -548,23 +516,21 @@
                         </div>
                     </div>
                 </div>
-                <!-- CTA -->
                 <div class="text-center bg-white rounded-3xl p-8 sm:p-12 shadow-lg">
-                    <h2 class="text-3xl sm:text-4xl font-black text-gray-800 mb-6">Follow the Research</h2>
-                    <p class="text-lg sm:text-xl text-gray-600 font-medium mb-8">Watch our design consultants and their ongoing quality control work</p>
+                    <h2 class="text-3xl sm:text-4xl text-gray-800 mb-6">Follow the Research</h2>
+                    <p class="text-lg sm:text-xl text-gray-600 font-medium mb-8 font-subtitle">Watch our design consultants and their ongoing quality control work</p>
                     <a href="https://instagram.com/theronintoymaker" target="_blank" class="bg-purple text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-purple-700 transition-all transform hover:scale-105 inline-block">@theronintoymaker →</a>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- INTEREST FORM PAGE -->
     <div id="interest" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-gray-800 mb-8">Join the Chaos</h1>
-                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium">Get notified when your favorite toy launches</p>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-800 mb-8">Join the Chaos</h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium font-subtitle">Get notified when your favorite toy launches</p>
                 </div>
                 <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg max-w-2xl mx-auto">
                     <form action="https://formspree.io/f/xovnkajz" method="POST" class="space-y-6">
@@ -605,7 +571,6 @@
         </section>
     </div>
 
-    <!-- Product Expansion Modal -->
     <div id="toyModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden z-50 flex items-center justify-center p-6" onclick="closeToy(event)">
         <div class="bg-white rounded-3xl max-w-4xl w-full max-h-screen overflow-y-auto relative shadow-2xl">
             <button class="absolute top-6 right-6 bg-warm-ochre rounded-full p-3 hover:bg-yellow-400 transition-colors z-10" onclick="closeToy()"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg></button>
@@ -613,7 +578,6 @@
         </div>
     </div>
     
-    <!-- Floating Scroll Navigation: Now on right with borders -->
     <div id="scroll-nav" class="fixed bottom-5 right-5 z-50 flex flex-col items-center space-y-2">
         <button id="scroll-up-btn" onclick="scrollToTop()" class="hidden bg-purple text-white w-12 h-12 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none transform hover:scale-110 transition-transform border-2 border-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
@@ -626,15 +590,26 @@
         </button>
     </div>
 
-    <!-- Footer: Background changed to purple -->
     <footer class="bg-purple text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-             <div class="mb-4">
-                <a href="https://www.websitecarbon.com/website/nandapadmanabhan-com/" target="_blank" class="inline-flex items-center space-x-2 bg-sage-green text-white px-4 py-2 rounded-full hover:bg-green-600 transition">
-                    <span class="text-sm font-bold">🌱 This website is cleaner than 85% of websites tested</span>
-                </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left text-sm text-gray-300">
+                    <p>&copy; 2024 Ronin Toys. All rights reserved.</p>
+                    <p>We take play, and our planet, seriously.</p>
+                    <a href="https://instagram.com/theronintoymaker" target="_blank" class="text-bluey-orange hover:text-warm-ochre underline inline-flex items-center gap-2 mt-4">
+                        <i class="fab fa-instagram"></i>
+                        <span>@theronintoymaker</span>
+                    </a>
+                </div>
+                <div class="flex flex-col items-center gap-4">
+                    <button class="bg-electric-coral text-white px-6 py-3 rounded-full font-bold hover:bg-red-600 transition-all transform hover:scale-105" onclick="router.goTo('interest')">
+                        Contact The Toymaker
+                    </button>
+                    <a href="https://www.websitecarbon.com/website/nandapadmanabhan-com/" target="_blank" class="inline-flex items-center space-x-2 bg-sage-green text-white px-4 py-2 rounded-full hover:bg-green-600 transition">
+                        <span class="text-sm font-bold">🌱 This website is cleaner than 85% of websites tested</span>
+                    </a>
+                </div>
             </div>
-            <p class="text-sm text-gray-300 mt-4">&copy; 2024 Ronin Toys. All rights reserved. We take play, and our planet, seriously.</p>
         </div>
     </footer>
     <script>
@@ -650,7 +625,7 @@
         const router = {
             validPages: ['home', 'products', 'about', 'cats', 'interest'],
             
-            goTo: function(pageId) {
+            goTo: function(pageId, params = {}) {
                 if (!this.validPages.includes(pageId)) { pageId = 'home'; }
                 
                 this.validPages.forEach(id => {
@@ -659,16 +634,35 @@
                 });
                 
                 const targetPage = document.getElementById(pageId);
-                if (targetPage) {
-                    targetPage.classList.add('active');
-                    window.location.hash = pageId;
-                    window.scrollTo(0,0);
-                }
-                
+                if (!targetPage) return;
+
+                targetPage.classList.add('active');
+                window.location.hash = pageId;
+
                 if (pageId === 'cats') {
-                    setTimeout(initLatinTransition, 100);
+                    initLatinTransition();
+                    if (params.selectedCatId) {
+                        setTimeout(() => {
+                            const targetSection = document.getElementById(params.selectedCatId);
+                            if (targetSection) {
+                                targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                
+                                const flipper = targetSection.querySelector('.cat-flipper-container');
+                                if (flipper) flipper.classList.add('is-flipped');
+                                
+                                targetSection.classList.add('highlight-cat');
+                                setTimeout(() => targetSection.classList.remove('highlight-cat'), 2500);
+                            }
+                        }, 50);
+                    } else {
+                        window.scrollTo(0, 0);
+                    }
                 } else {
+                    window.scrollTo(0, 0);
                     if (latinInterval) { clearInterval(latinInterval); latinInterval = null; }
+                    document.querySelectorAll('#cats .cat-flipper-container').forEach(flipper => {
+                        flipper.classList.remove('is-flipped');
+                    });
                 }
             },
             
@@ -681,8 +675,7 @@
 
         window.addEventListener('hashchange', function() {
             const hash = window.location.hash.substring(1);
-            const page = router.validPages.includes(hash) ? hash : 'home';
-            router.goTo(page);
+            router.goTo(hash);
         });
         
         function populateProductsPage() {
@@ -697,9 +690,9 @@
                             <div class="text-white text-6xl md:text-8xl">${toy.emoji}</div>
                         </div>
                         <div class="text-center md:text-left">
-                            <h2 class="text-3xl sm:text-4xl font-black text-gray-800 mb-2">${toy.name}</h2>
-                            <p class="text-md sm:text-lg text-gray-600 font-bold mb-4">${toy.tagline}</p>
-                            <div class="text-3xl sm:text-4xl font-black text-electric-coral mb-6">${toy.price}</div>
+                            <h2 class="text-3xl sm:text-4xl text-gray-800 mb-2">${toy.name}</h2>
+                            <p class="text-md sm:text-lg text-gray-600 font-bold mb-4 font-subtitle">${toy.tagline}</p>
+                            <div class="text-3xl sm:text-4xl text-electric-coral mb-6">${toy.price}</div>
                             <h3 class="text-xl font-bold text-gray-800 mb-2">Thought Process</h3>
                             <p class="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -731,7 +724,7 @@
             const toy = toys[toyKey];
             const modal = document.getElementById('toyModal');
             const content = document.getElementById('toyContent');
-            content.innerHTML = `<div class="grid md:grid-cols-2 gap-8 items-center"><div class="space-y-6"><div class="flex items-center space-x-4"><h2 class="text-5xl font-black text-gray-800">${toy.name}</h2><div class="text-4xl">${toy.emoji}</div></div><p class="text-xl font-bold text-gray-700">${toy.tagline}</p><p class="text-lg text-gray-600 font-medium leading-relaxed">${toy.story}</p><div class="text-4xl font-black text-deep-teal">${toy.price}</div><button class="bg-deep-teal text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 transition-all transform hover:scale-105 w-full" onclick="router.goTo('interest'); closeToy();">Get Notified</button><p class="text-center text-gray-500 text-sm">Follow <a href="https://instagram.com/theronintoymaker" target="_blank" class="underline">@theronintoymaker</a> for research updates</p></div><div class="aspect-square ${toy.bg} rounded-3xl flex items-center justify-center relative overflow-hidden group clickable" onclick="playVideo(this)"><div class="text-white text-8xl">${toy.emoji}</div><div class="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-30 transition-opacity"></div><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><div class="text-white text-center"><div class="text-4xl mb-2">▶</div><p class="font-bold">Watch Video</p></div></div></div></div>`;
+            content.innerHTML = `<div class="grid md:grid-cols-2 gap-8 items-center"><div class="space-y-6"><div class="flex items-center space-x-4"><h2 class="text-5xl text-gray-800">${toy.name}</h2><div class="text-4xl">${toy.emoji}</div></div><p class="text-xl font-bold text-gray-700 font-subtitle">${toy.tagline}</p><p class="text-lg text-gray-600 font-medium leading-relaxed">${toy.story}</p><div class="text-4xl font-black text-deep-teal">${toy.price}</div><button class="bg-deep-teal text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 transition-all transform hover:scale-105 w-full" onclick="router.goTo('interest'); closeToy();">Get Notified</button><p class="text-center text-gray-500 text-sm">Follow <a href="https://instagram.com/theronintoymaker" target="_blank" class="underline">@theronintoymaker</a> for research updates</p></div><div class="aspect-square ${toy.bg} rounded-3xl flex items-center justify-center relative overflow-hidden group clickable" onclick="playVideo(this)"><div class="text-white text-8xl">${toy.emoji}</div><div class="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-30 transition-opacity"></div><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><div class="text-white text-center"><div class="text-4xl mb-2">▶</div><p class="font-bold">Watch Video</p></div></div></div></div>`;
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
@@ -766,185 +759,113 @@
             const scrollPosition = window.scrollY;
             const windowHeight = window.innerHeight;
             const bodyHeight = document.body.offsetHeight;
-            if (scrollPosition > windowHeight / 2) {
-                scrollUpBtn.classList.remove('hidden');
-            } else {
-                scrollUpBtn.classList.add('hidden');
-            }
-            if (scrollPosition + windowHeight >= bodyHeight - 100) {
-                scrollDownBtn.classList.add('hidden');
-                scrollBottomBtn.classList.add('hidden');
-            } else {
-                scrollDownBtn.classList.remove('hidden');
-                scrollBottomBtn.classList.remove('hidden');
-            }
+            scrollUpBtn.classList.toggle('hidden', scrollPosition <= windowHeight / 2);
+            const atBottom = scrollPosition + windowHeight >= bodyHeight - 100;
+            scrollDownBtn.classList.toggle('hidden', atBottom);
+            scrollBottomBtn.classList.toggle('hidden', atBottom);
         }
 
         window.addEventListener('scroll', handleScrollButtons);
         
-        // --- Carousel Logic ---
         function setupCarousel() {
             const track = document.getElementById('carousel-track');
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
-            
             if(!track || !prevBtn || !nextBtn) return;
-
-            // Generate slides from toys object
             let slidesHTML = '';
             const toyKeys = Object.keys(toys);
-
             toyKeys.forEach(key => {
                 const toy = toys[key];
                 slidesHTML += `
                 <div class="w-full lg:w-1/2 flex-shrink-0 p-2">
                     <div class="bg-white rounded-3xl p-6 md:p-0 md:flex md:items-center md:gap-6 lg:gap-8 shadow-lg md:h-64 transition-all duration-500 transform ${toy.hover} clickable" onclick="expandToy('${toy.id}')">
-                        <!-- Image section -->
                         <div class="md:w-48 md:h-full md:flex-shrink-0">
                            <div class="${toy.bg} rounded-2xl md:rounded-l-3xl md:rounded-r-none w-full h-48 md:h-full flex items-center justify-center relative overflow-hidden group">
                                 <div class="text-white text-6xl bounce-play">${toy.emoji}</div>
                            </div>
                         </div>
-                        <!-- Text section -->
                         <div class="pt-6 md:pt-0 md:pr-6 md:flex-1 text-center md:text-left">
-                            <h3 class="text-2xl sm:text-3xl font-black text-gray-800 mb-2">${toy.name}</h3>
-                            <p class="text-sm sm:text-base text-gray-600 font-medium mb-4">${toy.tagline}</p>
+                            <h3 class="text-2xl sm:text-3xl text-gray-800 mb-2">${toy.name}</h3>
+                            <p class="text-sm sm:text-base text-gray-600 font-medium mb-4 font-subtitle">${toy.tagline}</p>
                             <div class="text-2xl sm:text-3xl font-black text-electric-coral">${toy.price}</div>
                         </div>
                     </div>
-                </div>
-                `;
+                </div>`;
             });
             track.innerHTML = slidesHTML;
-            
             let currentIndex = 0;
             const slides = track.children;
             const totalSlides = slides.length;
-
-            function getSlidesInView() {
-                return window.innerWidth >= 1024 ? 2 : 1;
-            }
-
+            function getSlidesInView() { return window.innerWidth >= 1024 ? 2 : 1; }
             function updateCarousel() {
                 const slidesInView = getSlidesInView();
                 const slideWidth = 100 / slidesInView;
                 track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-
-                // Loop carousel
-                if (currentIndex >= totalSlides - (slidesInView - 1)) {
-                    nextBtn.disabled = true; // Visually disable or hide
-                } else {
-                     nextBtn.disabled = false;
-                }
-                 if (currentIndex <= 0) {
-                    prevBtn.disabled = true; // Visually disable or hide
-                } else {
-                    prevBtn.disabled = false;
-                }
+                nextBtn.disabled = currentIndex >= totalSlides - slidesInView;
+                prevBtn.disabled = currentIndex <= 0;
             }
-
             nextBtn.addEventListener('click', () => {
-                const slidesInView = getSlidesInView();
-                if (currentIndex < totalSlides - slidesInView) {
+                if (currentIndex < totalSlides - getSlidesInView()) {
                     currentIndex++;
                     updateCarousel();
                 }
             });
-
             prevBtn.addEventListener('click', () => {
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateCarousel();
                 }
             });
-            
             window.addEventListener('resize', updateCarousel);
             updateCarousel();
         }
-
-        // === Boop Function START ===
+        
         function showBoop(event) {
-            const container = event.target.closest('.cat-face');
-            if (!container) return; // safety check
-            if (container.querySelector('.boop-text')) return;
-
+            const container = event.target.closest('.cat-flipper-container');
+            if (!container || container.querySelector('.boop-text')) return;
             const boopElement = document.createElement('span');
             boopElement.textContent = 'Boop!';
             boopElement.className = 'boop-text';
-
             container.appendChild(boopElement);
-            setTimeout(() => {
-                if (boopElement.parentElement) {
-                    container.removeChild(boopElement);
-                }
+            setTimeout(() => { 
+                if (boopElement.parentElement) { 
+                    container.removeChild(boopElement); 
+                } 
             }, 950);
         }
-        // === Boop Function END ===
 
-        // === Cat Flipper Logic START ===
         function handleCatInteraction() {
             const catContainers = document.querySelectorAll('.cat-flipper-container');
-            let flipTimeout; // To hold the timer
-
             catContainers.forEach(container => {
                 container.addEventListener('click', (event) => {
                     event.stopPropagation();
-
-                    // Always clear any existing timeout when a card is clicked
-                    clearTimeout(flipTimeout);
-
-                    // --- SECOND CLICK LOGIC (Navigate & Scroll) ---
-                    if (container.classList.contains('is-flipped')) {
-                        const targetId = container.dataset.catTarget;
-                        if (targetId) {
-                            router.goTo('cats');
-
-                            // We need a slight delay for the page to become visible before scrolling
-                            setTimeout(() => {
-                                const targetElement = document.getElementById(targetId);
-                                if (targetElement) {
-                                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                                    
-                                    // Add a temporary highlight for user feedback
-                                    targetElement.classList.add('highlight-cat');
-                                    setTimeout(() => targetElement.classList.remove('highlight-cat'), 2500);
-                                }
-                            }, 150); 
+                    
+                    if (container.closest('#home')) {
+                        if (container.classList.contains('is-flipped')) {
+                            const catTargetId = container.dataset.catTarget;
+                            router.goTo('cats', { selectedCatId: catTargetId });
+                            container.classList.remove('is-flipped'); 
+                        } else {
+                            catContainers.forEach(c => {
+                                if (c.closest('#home') && c !== container) c.classList.remove('is-flipped');
+                            });
+                            container.classList.add('is-flipped');
+                            const boopTarget = container.querySelector('.cat-front img');
+                            if(boopTarget) showBoop({ target: boopTarget });
                         }
-                    } 
-                    // --- FIRST CLICK LOGIC (Flip & Boop) ---
-                    else {
-                        // Un-flip any other cards first for a cleaner experience
-                        catContainers.forEach(c => {
-                            if (c !== container) c.classList.remove('is-flipped');
-                        });
-
-                        // Flip the clicked card
-                        container.classList.add('is-flipped');
-                        
-                        // Trigger the boop effect on the correct element
-                        const boopTarget = container.querySelector('.cat-front img');
-                        if(boopTarget) {
-                            showBoop({ target: boopTarget });
-                        }
-
-                        // Set a timer to flip the card back after 10 seconds
-                        flipTimeout = setTimeout(() => {
-                            container.classList.remove('is-flipped');
-                        }, 10000); // 10000 milliseconds = 10 seconds
+                    } else if (container.closest('#cats')) {
+                        container.classList.toggle('is-flipped');
                     }
                 });
             });
         }
-        // === Cat Flipper Logic END ===
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Initial calls
             router.init();
             populateProductsPage();
             handleScrollButtons();
             setupCarousel();
-            handleCatInteraction(); // Initialize our new feature
+            handleCatInteraction();
         });
     </script>
 </body>
