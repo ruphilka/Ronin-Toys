@@ -447,11 +447,17 @@
                 grid-area: auto;
             }
         }
+        
+        /* -- FIX: Added rule for mobile menu open state -- */
+        #mobile-menu.is-open {
+            transform: scaleY(1);
+        }
     </style>
 </head>
 
-<body class="bg-warm-cream text-gray-800 overflow-x-hidden">
-    <nav class="bg-purple sticky top-0 z-50 shadow-lg">
+<body class="bg-warm-cream text-gray-800 overflow-x-hidden pt-16">
+    <!-- FIX: Removed conflicting `relative` class -->
+    <nav class="bg-purple fixed top-0 left-0 right-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-16">
                 <h1 class="text-white text-2xl cursor-pointer" onclick="router.goTo('home')">Ronin Toys</h1>
@@ -484,25 +490,24 @@
                 </button>
             </div>
         </div>
-    </nav>
-
-    <div id="mobile-menu" class="md:hidden bg-deep-teal hidden">
-        <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
-            <a href="#home" onclick="router.goTo('home'); closeMobileMenu()"
-                class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
-            <a href="#products" onclick="router.goTo('products'); closeMobileMenu()"
-                class="block text-white hover:text-warm-ochre font-medium py-2">Products</a>
-            <a href="#about" onclick="router.goTo('about'); closeMobileMenu()"
-                class="block text-white hover:text-warm-ochre font-medium py-2">About Ruby</a>
-            <a href="#cats" onclick="router.goTo('cats'); closeMobileMenu()"
-                class="block text-white hover:text-warm-ochre font-medium py-2">The Research Team</a>
-            <a href="#interest" onclick="router.goTo('interest'); closeMobileMenu()"
-                class="block text-white hover:text-warm-ochre font-medium py-2">Get Notified</a>
-            <a href="https://instagram.com/theronintoymaker" target="_blank"
-                class="block text-white hover:text-warm-ochre font-medium py-2 underline inline-flex items-center gap-1"><i
-                    class="fab fa-instagram"></i><span>Follow Us!</span></a>
+        <div id="mobile-menu" class="md:hidden bg-deep-teal absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
+            <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
+                <a href="#home" onclick="router.goTo('home'); closeMobileMenu()"
+                    class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
+                <a href="#products" onclick="router.goTo('products'); closeMobileMenu()"
+                    class="block text-white hover:text-warm-ochre font-medium py-2">Products</a>
+                <a href="#about" onclick="router.goTo('about'); closeMobileMenu()"
+                    class="block text-white hover:text-warm-ochre font-medium py-2">About Ruby</a>
+                <a href="#cats" onclick="router.goTo('cats'); closeMobileMenu()"
+                    class="block text-white hover:text-warm-ochre font-medium py-2">The Research Team</a>
+                <a href="#interest" onclick="router.goTo('interest'); closeMobileMenu()"
+                    class="block text-white hover:text-warm-ochre font-medium py-2">Get Notified</a>
+                <a href="https://instagram.com/theronintoymaker" target="_blank"
+                    class="block text-white hover:text-warm-ochre font-medium py-2 underline inline-flex items-center gap-1"><i
+                        class="fab fa-instagram"></i><span>Follow Us!</span></a>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <div id="home" class="page">
         <section class="min-h-screen bg-electric-coral flex items-center relative overflow-hidden">
@@ -1289,8 +1294,13 @@
             }, 800);
         }
 
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
-        function closeMobileMenu() { document.getElementById('mobile-menu').classList.add('hidden'); }
+        // FIX: Updated JS functions to toggle a class for animation
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('is-open');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.remove('is-open');
+        }
 
         const scrollUpBtn = document.getElementById('scroll-up-btn');
         const scrollDownBtn = document.getElementById('scroll-down-btn');
@@ -1525,3 +1535,4 @@
 </body>
 
 </html>
+
