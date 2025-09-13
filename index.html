@@ -98,6 +98,47 @@
             80% { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
             100% { transform: translateX(-50%) translateY(-20px) scale(0.8); opacity: 0; }
         }
+
+        /* --- Cat Flipper Animation --- */
+        .cat-flipper-container {
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .cat-flipper {
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform-style: preserve-3d;
+        }
+
+        .cat-flipper-container.is-flipped .cat-flipper {
+            transform: rotateY(180deg);
+        }
+
+        .cat-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+        }
+
+        .cat-back {
+            transform: rotateY(180deg);
+        }
+
+        .cat-back img {
+            border-radius: 50%; /* Makes the real photo circular */
+            border: 8px solid #FFF8E7; /* warm-cream */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+        }
+
+        /* --- Profile Highlight on Scroll --- */
+        #cats .highlight-cat {
+            transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 0 0 8px #CC8E35; /* warm-ochre */
+            border-radius: 1.5rem; /* Matches the rounded-3xl class */
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-warm-cream text-gray-800 overflow-x-hidden">
@@ -146,16 +187,43 @@
         <!-- Hero: Background changed to electric-coral -->
         <section class="min-h-screen bg-electric-coral flex items-center relative overflow-hidden">
             <!-- Zelda Image -->
-            <div class="absolute top-16 -left-12 sm:-left-8 md:top-1/4 md:left-20 w-48 h-48 md:w-64 md:h-64">
-                <img src="images/zelda_nobg.png" alt="Zelda the cat character" class="w-full h-full object-contain float-dance opacity-40 md:opacity-100 cursor-pointer" onclick="showBoop(event)">
+            <div data-cat-target="zelda-section" class="cat-flipper-container absolute top-16 -left-12 sm:-left-8 md:top-1/4 md:left-20 w-48 h-48 md:w-64 md:h-64 float-dance">
+                <div class="cat-flipper relative w-full h-full">
+                    <!-- Front Face (Character) -->
+                    <div class="cat-face cat-front opacity-40 md:opacity-100">
+                        <img src="images/zelda_nobg.png" alt="Zelda the cat character" class="w-full h-full object-contain cursor-pointer">
+                    </div>
+                    <!-- Back Face (Real Cat) -->
+                    <div class="cat-face cat-back opacity-40 md:opacity-100">
+                        <img src="images/zelda.jpg" alt="The real Zelda, a majestic cat" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                </div>
             </div>
             <!-- Cloud Image -->
-            <div class="absolute top-24 -right-12 sm:-right-8 md:top-1/3 md:right-32 w-48 h-48 md:w-64 md:h-64" style="animation-delay: 1s;">
-                 <img src="images/cloud_nobg.png" alt="Cloud the cat character" class="w-full h-full object-contain float-dance opacity-40 md:opacity-100 cursor-pointer" onclick="showBoop(event)">
+            <div data-cat-target="cloud-section" class="cat-flipper-container absolute top-24 -right-12 sm:-right-8 md:top-1/3 md:right-32 w-48 h-48 md:w-64 md:h-64 float-dance" style="animation-delay: 1s;">
+                 <div class="cat-flipper relative w-full h-full">
+                    <!-- Front Face (Character) -->
+                    <div class="cat-face cat-front opacity-40 md:opacity-100">
+                        <img src="images/cloud_nobg.png" alt="Cloud the cat character" class="w-full h-full object-contain cursor-pointer">
+                    </div>
+                    <!-- Back Face (Real Cat) -->
+                    <div class="cat-face cat-back opacity-40 md:opacity-100">
+                        <img src="images/cloud.jpg" alt="The real Cloud, a fluffy cat" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                </div>
             </div>
             <!-- Gwilo Image -->
-            <div class="absolute bottom-8 -left-12 sm:left-10 w-48 h-48 md:w-64 md:h-64" style="animation-delay: 2s;">
-                 <img src="images/gwi_nobg.png" alt="Playful cat character" class="w-full h-full object-contain float-dance opacity-40 md:opacity-100 cursor-pointer" onclick="showBoop(event)">
+            <div data-cat-target="gwilo-section" class="cat-flipper-container absolute bottom-8 -left-12 sm:left-10 w-48 h-48 md:w-64 md:h-64 float-dance" style="animation-delay: 2s;">
+                 <div class="cat-flipper relative w-full h-full">
+                    <!-- Front Face (Character) -->
+                    <div class="cat-face cat-front opacity-40 md:opacity-100">
+                        <img src="images/gwi_nobg.png" alt="Playful cat character Gwilo" class="w-full h-full object-contain cursor-pointer">
+                    </div>
+                    <!-- Back Face (Real Cat) -->
+                    <div class="cat-face cat-back opacity-40 md:opacity-100">
+                        <img src="images/gwilo.jpg" alt="The real Gwilo, a handsome cat" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                </div>
             </div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 relative z-10">
@@ -404,7 +472,7 @@
                     <p id="latin-subtitle" class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium latin-fade">"Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
                 </div>
                 <!-- Gwilo -->
-                <div class="mb-12 sm:mb-16 lg:mb-20">
+                <div id="gwilo-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-purple">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
@@ -430,7 +498,7 @@
                     </div>
                 </div>
                 <!-- Zelda -->
-                <div class="mb-12 sm:mb-16 lg:mb-20">
+                <div id="zelda-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-deep-teal rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-1">
                             <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 sm:mb-6">Current Project: Rover</h3>
@@ -455,7 +523,7 @@
                     </div>
                 </div>
                 <!-- Cloud -->
-                <div class="mb-12 sm:mb-16 lg:mb-20">
+                <div id="cloud-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-electric-coral">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
@@ -796,11 +864,14 @@
 
         // === Boop Function START ===
         function showBoop(event) {
-            const container = event.target.parentElement;
+            const container = event.target.closest('.cat-face');
+            if (!container) return; // safety check
             if (container.querySelector('.boop-text')) return;
+
             const boopElement = document.createElement('span');
             boopElement.textContent = 'Boop!';
             boopElement.className = 'boop-text';
+
             container.appendChild(boopElement);
             setTimeout(() => {
                 if (boopElement.parentElement) {
@@ -810,6 +881,62 @@
         }
         // === Boop Function END ===
 
+        // === Cat Flipper Logic START ===
+        function handleCatInteraction() {
+            const catContainers = document.querySelectorAll('.cat-flipper-container');
+            let flipTimeout; // To hold the timer
+
+            catContainers.forEach(container => {
+                container.addEventListener('click', (event) => {
+                    event.stopPropagation();
+
+                    // Always clear any existing timeout when a card is clicked
+                    clearTimeout(flipTimeout);
+
+                    // --- SECOND CLICK LOGIC (Navigate & Scroll) ---
+                    if (container.classList.contains('is-flipped')) {
+                        const targetId = container.dataset.catTarget;
+                        if (targetId) {
+                            router.goTo('cats');
+
+                            // We need a slight delay for the page to become visible before scrolling
+                            setTimeout(() => {
+                                const targetElement = document.getElementById(targetId);
+                                if (targetElement) {
+                                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    
+                                    // Add a temporary highlight for user feedback
+                                    targetElement.classList.add('highlight-cat');
+                                    setTimeout(() => targetElement.classList.remove('highlight-cat'), 2500);
+                                }
+                            }, 150); 
+                        }
+                    } 
+                    // --- FIRST CLICK LOGIC (Flip & Boop) ---
+                    else {
+                        // Un-flip any other cards first for a cleaner experience
+                        catContainers.forEach(c => {
+                            if (c !== container) c.classList.remove('is-flipped');
+                        });
+
+                        // Flip the clicked card
+                        container.classList.add('is-flipped');
+                        
+                        // Trigger the boop effect on the correct element
+                        const boopTarget = container.querySelector('.cat-front img');
+                        if(boopTarget) {
+                            showBoop({ target: boopTarget });
+                        }
+
+                        // Set a timer to flip the card back after 10 seconds
+                        flipTimeout = setTimeout(() => {
+                            container.classList.remove('is-flipped');
+                        }, 10000); // 10000 milliseconds = 10 seconds
+                    }
+                });
+            });
+        }
+        // === Cat Flipper Logic END ===
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initial calls
@@ -817,7 +944,9 @@
             populateProductsPage();
             handleScrollButtons();
             setupCarousel();
+            handleCatInteraction(); // Initialize our new feature
         });
     </script>
 </body>
 </html>
+
