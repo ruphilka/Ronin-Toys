@@ -236,7 +236,8 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
         }
 
-        #cats .highlight-cat {
+        #cats .highlight-cat,
+        #products .highlight-product {
             transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
             box-shadow: 0 0 0 8px #CC8E35;
             border-radius: 1.5rem;
@@ -447,7 +448,7 @@
                 grid-area: auto;
             }
         }
-        
+
         /* -- FIX: Added rule for mobile menu open state -- */
         #mobile-menu.is-open {
             transform: scaleY(1);
@@ -456,7 +457,7 @@
 </head>
 
 <body class="bg-warm-cream text-gray-800 overflow-x-hidden pt-16">
-    <!-- FIX: Removed conflicting `relative` class -->
+    <!-- Navigation Bar -->
     <nav class="bg-purple fixed top-0 left-0 right-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-16">
@@ -490,7 +491,8 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden bg-deep-teal absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
+        <div id="mobile-menu"
+            class="md:hidden bg-deep-teal absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
             <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
                 <a href="#home" onclick="router.goTo('home'); closeMobileMenu()"
                     class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
@@ -509,6 +511,7 @@
         </div>
     </nav>
 
+    <!-- Home Page -->
     <div id="home" class="page">
         <section class="min-h-screen bg-electric-coral flex items-center relative overflow-hidden">
             <div data-cat-target="zelda-section"
@@ -596,7 +599,7 @@
             </div>
         </section>
 
-        <!-- === START: SCIENTIFIC APPROACH SECTION === -->
+        <!-- Scientific Approach Section -->
         <section id="scientific-approach-section" class="bg-bluey-orange py-16 sm:py-20 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
@@ -611,74 +614,7 @@
                         style="z-index: 0; pointer-events: none;"></svg>
                     <div id="scientific-approach-mobile-grid"
                         class="flex flex-col items-center max-w-sm mx-auto sm:max-w-none">
-
-                        <div data-step="1" class="step-simple-item flex items-center w-full space-x-4">
-                            <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-electric-coral text-3xl">science</span>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white">Step 1: Observe</h3>
-                                <p class="text-sm text-white font-medium">Take notes when cats play properly.</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-16 flex justify-center sm:hidden"><span
-                                class="material-symbols-outlined text-white text-4xl">south</span></div>
-
-                        <div data-step="2" class="step-simple-item flex items-center w-full space-x-4">
-                            <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-warm-ochre text-3xl">lightbulb</span></div>
-                            <div>
-                                <h3 class="text-xl text-white">Step 2: Hypothesize</h3>
-                                <p class="text-sm text-white font-medium">Ask 'Ok what if this BUT MORE?'</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-16 flex justify-center sm:hidden"><span
-                                class="material-symbols-outlined text-white text-4xl">south</span></div>
-
-                        <div data-step="3" class="step-simple-item flex items-center w-full space-x-4">
-                            <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-sage-green text-3xl">construction</span>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white">Step 3: Build</h3>
-                                <p class="text-sm text-white font-medium">Create prototypes.</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-16 flex justify-center sm:hidden"><span
-                                class="material-symbols-outlined text-white text-4xl">south</span></div>
-
-                        <div data-step="4" class="step-simple-item flex items-center w-full space-x-4">
-                            <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-purple text-3xl">pets</span></div>
-                            <div>
-                                <h3 class="text-xl text-white">Step 4: Test</h3>
-                                <p class="text-sm text-white font-medium">Present to focus group. Await verdict.</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-16 flex justify-center sm:hidden"><span
-                                class="material-symbols-outlined text-white text-4xl">south</span></div>
-
-                        <div data-step="5" class="step-simple-item flex items-center w-full space-x-4">
-                            <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-deep-teal text-3xl">sync</span></div>
-                            <div>
-                                <h3 class="text-xl text-white">Step 5: Iterate</h3>
-                                <p class="text-sm text-white font-medium">Adjust based on feline feedback.</p>
-                            </div>
-                        </div>
-                        <div class="h-12 w-16 flex justify-center sm:hidden"><span
-                                class="material-symbols-outlined text-white text-4xl">south</span></div>
-
-                        <div data-step="6" class="step-simple-item flex items-center w-full space-x-4">
-                            <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-electric-coral text-3xl">celebration</span>
-                            </div>
-                            <div>
-                                <h3 class="text-xl text-white">Step 6: Release</h3>
-                                <p class="text-sm text-white font-medium">Share with the world, await judgment.</p>
-                            </div>
-                        </div>
-
+                        <!-- Steps will be dynamically injected here for simplicity -->
                     </div>
                 </div>
 
@@ -687,54 +623,11 @@
                     <svg id="connector-svg-desktop" class="absolute top-0 left-0 w-full h-full"
                         style="z-index: 0; pointer-events: none;"></svg>
                     <div id="scientific-approach-desktop-grid">
-                        <div data-step="1" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
-                            <div
-                                class="w-16 h-16 mx-auto mb-4 bg-electric-coral rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl">science</span></div>
-                            <h3 class="text-2xl text-gray-800 mb-4">Step 1: Observe</h3>
-                            <p class="text-base text-gray-600 font-medium">Take notes when cats play with you properly.
-                            </p>
-                        </div>
-                        <div data-step="2" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
-                            <div
-                                class="w-16 h-16 mx-auto mb-4 bg-warm-ochre rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl">lightbulb</span></div>
-                            <h3 class="text-2xl text-gray-800 mb-4">Step 2: Hypothesize</h3>
-                            <p class="text-base text-gray-600 font-medium">Ask 'Ok what if this BUT MORE?'</p>
-                        </div>
-                        <div data-step="3" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
-                            <div
-                                class="w-16 h-16 mx-auto mb-4 bg-sage-green rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl">construction</span></div>
-                            <h3 class="text-2xl text-gray-800 mb-4">Step 3: Build</h3>
-                            <p class="text-base text-gray-600 font-medium">Create prototypes using questionable
-                                engineering decisions.</p>
-                        </div>
-                        <div data-step="4" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
-                            <div class="w-16 h-16 mx-auto mb-4 bg-purple rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl">pets</span></div>
-                            <h3 class="text-2xl text-gray-800 mb-4">Step 4: Test</h3>
-                            <p class="text-base text-gray-600 font-medium">Present to focus group. Await verdict.</p>
-                        </div>
-                        <div data-step="5" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
-                            <div
-                                class="w-16 h-16 mx-auto mb-4 bg-deep-teal rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl">sync</span></div>
-                            <h3 class="text-2xl text-gray-800 mb-4">Step 5: Iterate</h3>
-                            <p class="text-base text-gray-600 font-medium">Adjust based on feline feedback.</p>
-                        </div>
-                        <div data-step="6" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
-                            <div
-                                class="w-16 h-16 mx-auto mb-4 bg-electric-coral rounded-2xl flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl">celebration</span></div>
-                            <h3 class="text-2xl text-gray-800 mb-4">Step 6: Release</h3>
-                            <p class="text-base text-gray-600 font-medium">Share with the world, await judgment.</p>
-                        </div>
+                        <!-- Cards will be dynamically injected here for simplicity -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- === END: SCIENTIFIC APPROACH SECTION === -->
 
         <section class="bg-bluey-blue py-16 sm:py-20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -770,8 +663,9 @@
 
     </div>
 
+    <!-- Products Page -->
     <div id="products" class="page">
-        <section class="min-h-screen bg-bluey-orange py-16 sm:py-20">
+        <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
                     <h1 class="text-4xl sm:text-5xl md:text-6xl text-gray-800 mb-8">The Chaos Collection</h1>
@@ -783,6 +677,7 @@
         </section>
     </div>
 
+    <!-- About Page -->
     <div id="about" class="page">
         <section class="min-h-screen bg-sage-green py-16 sm:py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -840,6 +735,7 @@
         </section>
     </div>
 
+    <!-- Cats/Research Team Page -->
     <div id="cats" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -849,6 +745,7 @@
                         class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium latin-fade font-subtitle">
                         "Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
                 </div>
+                <!-- Gwilo Section -->
                 <div id="gwilo-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
@@ -874,7 +771,8 @@
                                 <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-2">Gwilo</h2>
                                 <p
                                     class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6 font-subtitle">
-                                    Age: ~8 Earth Years • Senior Research Fellow in Applied Mischief</p>
+                                    Age: ~8 Earth Years • Designation: Ninja/ Chaos Conspirator/ Senior Research Fellow
+                                    in Applied Mischief</p>
                                 <div
                                     class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
                                     <p><strong>Primary Research Focus:</strong> Gwilo operates on the revolutionary
@@ -883,11 +781,12 @@
                                         teamwork and fun.</p>
                                     <p><strong>Research Philosophy:</strong> "If it doesn't invite participation, what's
                                         the point?"</p>
+                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'reelin'})" class="text-purple font-bold underline hover:text-deep-teal">Reelin'</a></p>
                                 </div>
                             </div>
                         </div>
                         <div class="bg-purple rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Reelin
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Reelin'
                             </h3>
                             <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
                                 <p>An organic fishing apparatus developed in collaboration with Gwilo. Made from bamboo
@@ -902,6 +801,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Zelda Section -->
                 <div id="zelda-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div class="bg-deep-teal rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-1">
@@ -936,7 +836,8 @@
                                 <h2 class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-2">Zelda</h2>
                                 <p
                                     class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6 font-subtitle">
-                                    Age: 7.5 Earth Years • Senior Research Fellow in Applied Precision</p>
+                                    Age: 7.5 Earth Years • Designation: Samurai/ Chaos Overseer/ Senior Research Fellow
+                                    in Applied Precision</p>
                                 <div
                                     class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
                                     <p><strong>Primary Research Focus:</strong> Zelda's optimal hunting sequence studies
@@ -945,11 +846,13 @@
                                         strike.</p>
                                     <p><strong>Research Philosophy:</strong> "If it doesn't please me, it has no
                                         business existing in my vicinity."</p>
+                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'rover'})" class="text-deep-teal font-bold underline hover:text-purple">Rover</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Cloud Section -->
                 <div id="cloud-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
@@ -976,7 +879,8 @@
                                     (aka Cloud)</h2>
                                 <p
                                     class="text-xs sm:text-sm lg:text-base text-gray-600 font-medium mb-4 sm:mb-6 font-subtitle">
-                                    Age: 1.9 Earth Years • Junior Research Fellow</p>
+                                    Age: 1.9 Earth Years • Designation: Part-time Ronin/ Chaos Instigator/ Junior
+                                    Research Fellow in Chaos Theory</p>
                                 <div
                                     class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-gray-600 font-medium">
                                     <p><strong>Primary Research Focus:</strong> Is primarily studying the conditions
@@ -984,21 +888,19 @@
                                         emitted during bowel evacuation, and the speed of participants when entering
                                         'The Zoom State'. He hopes to find out how to capitalize on the energy contained
                                         within this state.</p>
-                                    <p><strong>Research Philosophy:</strong> "Huh? Wait where was I going? Sorry were
-                                        you saying something?"</p>
+                                    <p><strong>Research Philosophy:</strong> "Huh? Wait where was I going? OH MY GOD DID
+                                        YOU SEE THAT THING JUST MOVE? I'm going to follow it."</p>
+                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'rollin'})" class="text-electric-coral font-bold underline hover:text-purple">He Forgot (Rollin' Ronin)</a></p>
                                 </div>
                             </div>
                         </div>
                         <div class="bg-electric-coral rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-2">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Rollin'
-                                Ronin</h3>
+                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: (He
+                                forgot)</h3>
                             <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
-                                <p>A weighted apparatus that creates unpredictable movement patterns based on Cloud's
-                                    research into chaos. Where some minds are overwhelmed by randomness, others need it
-                                    to engage.</p>
-                                <p><strong>Technical Innovation:</strong> How much ball, that much smart. If the Ronin
-                                    were any more baller, we'd call it our drunk uncle busting out dance moves at a
-                                    wedding. Perfect for minds that have a direct connection to chaos.</p>
+                                <p>He's currently assigned to the Rollin' Ronin, but his short attention span means his
+                                    'current' project changes by the minute. We think that's what he was working on,
+                                    anyway.</p>
                                 <p class="text-orange-800 font-bold italic">"Hey did that thing... OH MY GOD IT JUST
                                     MOVED! I'm going to follow it. Hey where is everyone?" - Cloud (every single time)
                                 </p>
@@ -1018,6 +920,7 @@
         </section>
     </div>
 
+    <!-- Interest/Contact Page -->
     <div id="interest" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -1099,19 +1002,7 @@
         </section>
     </div>
 
-    <div id="toyModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden z-50 flex items-center justify-center p-6"
-        onclick="closeToy(event)">
-        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-screen overflow-y-auto relative shadow-2xl">
-            <button
-                class="absolute top-6 right-6 bg-warm-ochre rounded-full p-3 hover:bg-yellow-400 transition-colors z-10"
-                onclick="closeToy()"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12">
-                    </path>
-                </svg></button>
-            <div id="toyContent" class="p-8"></div>
-        </div>
-    </div>
-
+    <!-- Scroll Navigation Buttons -->
     <div id="scroll-nav" class="fixed bottom-5 right-5 z-50 flex flex-col items-center space-y-2">
         <button id="scroll-up-btn" onclick="scrollToTop()"
             class="hidden bg-purple text-white w-12 h-12 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none transform hover:scale-110 transition-transform border-2 border-white">
@@ -1136,6 +1027,7 @@
         </button>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-purple text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -1164,10 +1056,50 @@
     </footer>
     <script>
         const toys = {
-            reelin: { id: 'reelin', name: "Reelin", price: "₹350", emoji: "🎣", tagline: "An anthropological study in cooperative chaos", story: "Developed in collaboration with Gwilo... Comes with a 3-month warranty because we believe in second chances.", bg: "bg-deep-teal", hover: "hover:rotate-1" },
-            rover: { id: 'rover', name: "Rover", price: "₹3,000", emoji: "🭀", tagline: "For quantum hunting experiments", story: "A modified micro mouse engineered to Zelda's exacting specifications... demanding nothing less than perfection in every movement pattern.", bg: "bg-deep-teal", hover: "hover:-rotate-1" },
-            rollin: { id: 'rollin', name: "Rollin' Ronin", price: "₹1,499", emoji: "⚽", tagline: "For sound-activated velocity studies", story: "Weighted interior creates unpredictable movement patterns... creating sound-triggered movement that activates zoom mode while engaging cognitive processes.", bg: "bg-sage-green", hover: "hover:rotate-1" },
-            chatter: { id: 'chatter', name: "ChatterBox", price: "₹2,200", emoji: "🗣️", tagline: "For interspecies dialogue research", story: "Record buttons for actual conversations... Based on groundbreaking research from Bunny the Talking Dog. Revolutionary communication technology.", bg: "bg-gray-700", hover: "hover:-rotate-1" }
+            reelin: {
+                id: 'reelin',
+                name: "Reelin",
+                price: "₹450",
+                emoji: "🎣",
+                tagline: "An anthropological study in cooperative chaos",
+                thoughtProcess: "An organic fishing apparatus developed in collaboration with <a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'gwilo-section'})\" class=\"text-purple font-bold underline hover:text-deep-teal cursor-pointer\">Gwilo</a>. Made from bamboo that grew up wanting to be a fishing rod, paired with a line that asks for no judgement when it breaks.",
+                technical: "Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play, and a 3-month warranty because we believe in second chances.",
+                bg: "bg-deep-teal",
+                hover: "hover:rotate-1"
+            },
+            rover: {
+                id: 'rover',
+                name: "Rover",
+                price: "₹3,000",
+                emoji: "🭀",
+                tagline: "For quantum hunting experiments",
+                thoughtProcess: "<a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'zelda-section'})\" class=\"text-deep-teal font-bold underline hover:text-purple cursor-pointer\">Zelda</a> has… exacting standards for live prey simulation. The Rover aims to achieve the mathematical perfection of The Hunt. The Rover is a modified micro mouse engineered to Zelda's specifications... resulting in nothing less than perfection in every movement pattern.",
+                technical: null,
+                bg: "bg-deep-teal",
+                hover: "hover:-rotate-1"
+            },
+            rollin: {
+                id: 'rollin',
+                name: "Rollin' Ronin",
+                price: "₹1,499",
+                emoji: "⚽",
+                tagline: "For sound-activated velocity studies",
+                thoughtProcess: "Where some minds are overwhelmed by randomness, others need it to engage. The Rollin Ronin’ is a masterless toy, that answers to no one, and yet doesn’t die in a corner by itself.",
+                technical: "How much ball, that much smart. A weighted apparatus inside the ball creates unpredictable movement patterns based on <a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'cloud-section'})\" class=\"text-electric-coral font-bold underline hover:text-purple cursor-pointer\">Cloud's</a> research into chaos, and a beeper lets you know when the toy is out of charge, or stuck in a corner, making retrieval easy (for the humans ofc).",
+                bg: "bg-sage-green",
+                hover: "hover:rotate-1"
+            },
+            chatter: {
+                id: 'chatter',
+                name: "ChatterBox",
+                price: "₹3500",
+                emoji: "🗣️",
+                tagline: "For interspecies dialogue research",
+                thoughtProcess: "Record buttons for actual conversations... Based on groundbreaking research from Bunny the Talking Dog. Revolutionary communication technology.",
+                technical: "What if you and your animal overlord could actually talk to each other? Well, now it’s possible. Without an import tax. You get 3 programmable buttons, a placemat, and extra switches (yes the button is modular) for whenever you need to swap them out!",
+                bg: "bg-gray-700",
+                hover: "hover:-rotate-1"
+            }
         };
 
         let latinInterval;
@@ -1189,17 +1121,26 @@
                 targetPage.classList.add('active');
                 window.location.hash = pageId;
 
-                if (pageId === 'cats') {
+                // Handle scrolling to specific sections
+                if (pageId === 'products' && params.scrollTo) {
+                    // Timeout allows the page to become visible before scrolling
+                    setTimeout(() => {
+                        const targetElement = document.getElementById(params.scrollTo);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            targetElement.classList.add('highlight-product');
+                            setTimeout(() => targetElement.classList.remove('highlight-product'), 2500);
+                        }
+                    }, 50);
+                } else if (pageId === 'cats') {
                     initLatinTransition();
                     if (params.selectedCatId) {
                         setTimeout(() => {
                             const targetSection = document.getElementById(params.selectedCatId);
                             if (targetSection) {
                                 targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
                                 const flipper = targetSection.querySelector('.cat-flipper-container');
                                 if (flipper) flipper.classList.add('is-flipped');
-
                                 targetSection.classList.add('highlight-cat');
                                 setTimeout(() => targetSection.classList.remove('highlight-cat'), 2500);
                             }
@@ -1235,18 +1176,22 @@
             for (const key in toys) {
                 const toy = toys[key];
                 content += `
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg flex flex-col md:flex-row items-center gap-8">
+                    <div id="${toy.id}" class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg flex flex-col md:flex-row items-center gap-8 transition-all duration-500">
                         <div class="${toy.bg} rounded-2xl w-32 h-32 md:w-48 md:h-48 flex-shrink-0 flex items-center justify-center">
                             <div class="text-white text-6xl md:text-8xl">${toy.emoji}</div>
                         </div>
-                        <div class="text-center md:text-left">
+                        <div class="text-center md:text-left flex-1">
                             <h2 class="text-3xl sm:text-4xl text-gray-800 mb-2">${toy.name}</h2>
                             <p class="text-md sm:text-lg text-gray-600 font-bold mb-4 font-subtitle">${toy.tagline}</p>
                             <div class="text-3xl sm:text-4xl text-electric-coral mb-6">${toy.price}</div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Thought Process</h3>
-                            <p class="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            </p>
+                            
+                            <h3 class="text-xl font-bold text-gray-800 mb-2 mt-6">Thought Process</h3>
+                            <p class="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">${toy.thoughtProcess}</p>
+                            
+                            ${toy.technical ? `
+                                <h3 class="text-xl font-bold text-gray-800 mb-2 mt-6">${(toy.id === 'rollin' || toy.id === 'chatter') ? 'Technical Innovation' : 'Technical Specifications'}</h3>
+                                <p class="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">${toy.technical}</p>
+                            ` : ''}
                         </div>
                     </div>
                 `;
@@ -1270,31 +1215,6 @@
             latinInterval = setInterval(switchText, 6000);
         }
 
-        function expandToy(toyKey) {
-            const toy = toys[toyKey];
-            const modal = document.getElementById('toyModal');
-            const content = document.getElementById('toyContent');
-            content.innerHTML = `<div class="grid md:grid-cols-2 gap-8 items-center"><div class="space-y-6"><div class="flex items-center space-x-4"><h2 class="text-5xl text-gray-800">${toy.name}</h2><div class="text-4xl">${toy.emoji}</div></div><p class="text-xl font-bold text-gray-700 font-subtitle">${toy.tagline}</p><p class="text-lg text-gray-600 font-medium leading-relaxed">${toy.story}</p><div class="text-4xl font-black text-deep-teal">${toy.price}</div><button class="bg-deep-teal text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-700 transition-all transform hover:scale-105 w-full" onclick="router.goTo('interest'); closeToy();">Get Notified</button><p class="text-center text-gray-500 text-sm">Follow <a href="https://instagram.com/theronintoymaker" target="_blank" class="underline">@theronintoymaker</a> for research updates</p></div><div class="aspect-square ${toy.bg} rounded-3xl flex items-center justify-center relative overflow-hidden group clickable" onclick="playVideo(this)"><div class="text-white text-8xl">${toy.emoji}</div><div class="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-30 transition-opacity"></div><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"><div class="text-white text-center"><div class="text-4xl mb-2">▶</div><p class="font-bold">Watch Video</p></div></div></div></div>`;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeToy(event) {
-            if (event && event.target !== event.currentTarget) return;
-            document.getElementById('toyModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function playVideo(el) {
-            el.style.transform = 'scale(1.1) rotate(360deg)';
-            el.style.transition = 'transform 0.8s ease-out';
-            setTimeout(() => {
-                el.style.transform = '';
-                el.style.transition = 'transform 0.3s ease-out';
-            }, 800);
-        }
-
-        // FIX: Updated JS functions to toggle a class for animation
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('is-open');
         }
@@ -1333,7 +1253,7 @@
                 const toy = toys[key];
                 slidesHTML += `
                 <div class="w-full lg:w-1/2 flex-shrink-0 p-2">
-                    <div class="bg-white rounded-3xl p-6 md:p-0 md:flex md:items-center md:gap-6 lg:gap-8 shadow-lg md:h-64 transition-all duration-500 transform ${toy.hover} clickable" onclick="expandToy('${toy.id}')">
+                    <div class="bg-white rounded-3xl p-6 md:p-0 md:flex md:items-center md:gap-6 lg:gap-8 shadow-lg md:h-64 transition-all duration-500 transform ${toy.hover} clickable" onclick="router.goTo('products', { scrollTo: '${toy.id}' })">
                         <div class="md:w-48 md:h-full md:flex-shrink-0">
                            <div class="${toy.bg} rounded-2xl md:rounded-l-3xl md:rounded-r-none w-full h-48 md:h-full flex items-center justify-center relative overflow-hidden group">
                                 <div class="text-white text-6xl bounce-play">${toy.emoji}</div>
@@ -1415,8 +1335,49 @@
             });
         }
 
-        // --- SCRIPT FOR SCIENTIFIC APPROACH SECTION ---
         function setupScientificApproach() {
+            const steps = [
+                { "step": "1", "icon": "science", "color": "text-electric-coral", "title": "Observe", "text": "Take notes when cats play properly." },
+                { "step": "2", "icon": "lightbulb", "color": "text-warm-ochre", "title": "Hypothesize", "text": "Ask 'Ok what if this BUT MORE?'" },
+                { "step": "3", "icon": "construction", "color": "text-sage-green", "title": "Build", "text": "Create prototypes." },
+                { "step": "4", "icon": "pets", "color": "text-purple", "title": "Test", "text": "Present to focus group. Await verdict." },
+                { "step": "5", "icon": "sync", "color": "text-deep-teal", "title": "Iterate", "text": "Adjust based on feline feedback." },
+                { "step": "6", "icon": "celebration", "color": "text-electric-coral", "title": "Release", "text": "Share with the world, await judgment." }
+            ];
+
+            const mobileGrid = document.getElementById('scientific-approach-mobile-grid');
+            const desktopGrid = document.getElementById('scientific-approach-desktop-grid');
+            if (!mobileGrid || !desktopGrid) return;
+
+            let mobileHTML = '';
+            let desktopHTML = '';
+
+            steps.forEach((s, index) => {
+                mobileHTML += `
+                    <div data-step="${s.step}" class="step-simple-item flex items-center w-full space-x-4">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex-shrink-0 flex items-center justify-center">
+                            <span class="material-symbols-outlined ${s.color} text-3xl">${s.icon}</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl text-white">Step ${s.step}: ${s.title}</h3>
+                            <p class="text-sm text-white font-medium">${s.text}</p>
+                        </div>
+                    </div>
+                    ${index < steps.length - 1 ? '<div class="h-12 w-16 flex justify-center sm:hidden"><span class="material-symbols-outlined text-white text-4xl">south</span></div>' : ''}`;
+
+                desktopHTML += `
+                    <div data-step="${s.step}" class="step-card bg-white rounded-3xl p-6 shadow-lg text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-${s.color.replace('text-', '')} rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl">${s.icon}</span>
+                        </div>
+                        <h3 class="text-2xl text-gray-800 mb-4">Step ${s.step}: ${s.title}</h3>
+                        <p class="text-base text-gray-600 font-medium">${s.text === 'Create prototypes.' ? 'Create prototypes using questionable engineering decisions.' : s.text}</p>
+                    </div>`;
+            });
+            mobileGrid.innerHTML = mobileHTML;
+            desktopGrid.innerHTML = desktopHTML;
+
+
             const section = document.getElementById('scientific-approach-section');
             if (!section) return;
 
@@ -1522,6 +1483,19 @@
                 resizeTimeout = setTimeout(runDraw, 150);
             });
         }
+        function setRandomFavicon() {
+            const favicons = [
+                'images/zelda_nobg.png',
+                'images/cloud_nobg.png',
+                'images/gwi_nobg.png'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * favicons.length);
+            const favicon = document.getElementById('favicon');
+            if (favicon) {
+                favicon.href = favicons[randomIndex];
+            }
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
             router.init();
@@ -1531,6 +1505,7 @@
             handleCatInteraction();
             setupScientificApproach();
         });
+
     </script>
 </body>
 
