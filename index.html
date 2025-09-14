@@ -515,7 +515,7 @@
     <div id="home" class="page">
         <section class="min-h-screen bg-electric-coral flex items-center relative overflow-hidden">
             <div data-cat-target="zelda-section"
-                class="cat-flipper-container absolute top-16 -left-12 sm:-left-8 md:top-1/4 md:left-20 w-48 h-48 md:w-64 md:h-64 float-dance">
+                class="cat-flipper-container absolute top-16 -left-12 sm:-left-8 md:top-1/4 md:left-20 w-56 h-56 md:w-72 md:h-72 float-dance">
                 <div class="cat-flipper relative w-full h-full">
                     <div class="cat-face cat-front opacity-40 md:opacity-100">
                         <img src="images/zelda_nobg.png" alt="Zelda the cat character"
@@ -747,9 +747,9 @@
                 </div>
                 <!-- Gwilo Section -->
                 <div id="gwilo-section" class="mb-12 sm:mb-16 lg:mb-20">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
-                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-purple">
+                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-purple w-full max-w-3xl">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
                                 <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
                                     <div class="cat-flipper relative w-full h-full">
@@ -785,36 +785,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-purple rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Reelin'
-                            </h3>
-                            <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
-                                <p>An organic fishing apparatus developed in collaboration with Gwilo. Made from bamboo
-                                    that grew up wanting to be a fishing rod, paired with a line that asks for no
-                                    judgement when it breaks.</p>
-                                <p><strong>Technical Specifications:</strong> Designed to die after approximately 85
-                                    sessions of quality chaos. Comes with extra string and bait designed for
-                                    inter-species play.</p>
-                                <p class="text-bluey-yellow font-bold italic">"Finally, a human who understands that
-                                    playing together is the point." – Gwilo</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- Zelda Section -->
                 <div id="zelda-section" class="mb-12 sm:mb-16 lg:mb-20">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                        <div class="bg-deep-teal rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-1">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: Rover
-                            </h3>
-                            <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
-                                <p>A modified micro mouse engineered to Zelda's standards for live prey simulation, the
-                                    Rover aims to achieve the mathematical perfection of The Hunt.</p>
-                                <p class="text-warm-ochre font-bold italic">"It will suffice. For now." – Zelda</p>
-                            </div>
-                        </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
-                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-deep-teal order-1 lg:order-2">
+                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-deep-teal w-full max-w-3xl">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
                                 <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
                                     <div class="cat-flipper relative w-full h-full">
@@ -854,9 +831,9 @@
                 </div>
                 <!-- Cloud Section -->
                 <div id="cloud-section" class="mb-12 sm:mb-16 lg:mb-20">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
-                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-electric-coral">
+                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-electric-coral w-full max-w-3xl">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
                                 <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
                                     <div class="cat-flipper relative w-full h-full">
@@ -892,18 +869,6 @@
                                         YOU SEE THAT THING JUST MOVE? I'm going to follow it."</p>
                                     <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'rollin'})" class="text-electric-coral font-bold underline hover:text-purple">He Forgot (Rollin' Ronin)</a></p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="bg-electric-coral rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg order-2 lg:order-2">
-                            <h3 class="text-xl sm:text-2xl lg:text-3xl text-white mb-4 sm:mb-6">Current Project: (He
-                                forgot)</h3>
-                            <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-white font-medium">
-                                <p>He's currently assigned to the Rollin' Ronin, but his short attention span means his
-                                    'current' project changes by the minute. We think that's what he was working on,
-                                    anyway.</p>
-                                <p class="text-orange-800 font-bold italic">"Hey did that thing... OH MY GOD IT JUST
-                                    MOVED! I'm going to follow it. Hey where is everyone?" - Cloud (every single time)
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -1482,19 +1447,6 @@
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(runDraw, 150);
             });
-        }
-        function setRandomFavicon() {
-            const favicons = [
-                'images/zelda_nobg.png',
-                'images/cloud_nobg.png',
-                'images/gwi_nobg.png'
-            ];
-
-            const randomIndex = Math.floor(Math.random() * favicons.length);
-            const favicon = document.getElementById('favicon');
-            if (favicon) {
-                favicon.href = favicons[randomIndex];
-            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
