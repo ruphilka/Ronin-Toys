@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Ronin Toys - We Take Play Seriously</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
                         'body': ['"Epilogue"', 'sans-serif'],
                     },
                     colors: {
-                        'deep-teal': '#2D5A5A',
+                        'emerald-700': '#047857',
                         'warm-ochre': '#CC8E35',
                         'electric-coral': '#FF6B6B',
                         'sage-green': '#87A96B',
@@ -485,14 +485,14 @@
                     </button>
                 </div>
                 <button
-                    class="hidden md:block bg-deep-teal text-white px-4 py-2 rounded-full font-bold hover:bg-teal-700 transition-all transform hover:scale-110"
+                    class="hidden md:block bg-emerald-700 text-white px-4 py-2 rounded-full font-bold hover:bg-emerald-600 transition-all transform hover:scale-110"
                     onclick="router.goTo('interest')">
                     Get Notified
                 </button>
             </div>
         </div>
         <div id="mobile-menu"
-            class="md:hidden bg-deep-teal absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
+            class="md:hidden bg-emerald-700 absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
             <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
                 <a href="#home" onclick="router.goTo('home'); closeMobileMenu()"
                     class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
@@ -630,32 +630,79 @@
         </section>
 
         <section class="bg-bluey-blue py-16 sm:py-20">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                <div class="text-center mb-12 sm:mb-16">
-                    <h2 class="text-4xl sm:text-5xl md:text-6xl text-white mb-6">Catch us in the wild</h2>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <!-- Desktop/Tablet Titles -->
+                <div class="hidden md:flex justify-between items-baseline mb-8">
+                    <h2 class="text-4xl sm:text-5xl text-white text-center w-5/12">Catch us in the wild</h2>
+                    <span class="text-white text-4xl font-title">Or</span>
+                    <h2 class="text-4xl sm:text-5xl text-white text-center w-5/12">domesticated at home</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <div class="w-4 h-4 bg-electric-coral rounded-full bounce-play"></div><span
-                                class="text-electric-coral font-black text-sm uppercase">Next Stop</span>
+    
+                <!-- Wrapper for both mobile and desktop cards -->
+                <div>
+                    <!-- Mobile Layout -->
+                    <div class="md:hidden">
+                        <h2 class="text-center text-4xl sm:text-5xl text-white mb-6">Catch us in the wild</h2>
+                        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-left mb-8">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-4 h-4 bg-electric-coral rounded-full bounce-play"></div><span
+                                    class="text-electric-coral font-black text-sm uppercase">Next Stop</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl text-gray-800 mb-2">India FOSS</h3>
+                            <p class="text-sm sm:text-base text-gray-700 font-bold mb-2">September 20-21</p>
+                            <p class="text-sm sm:text-base text-gray-600 mb-6">NIMHANS, Bengaluru</p>
+                            <button
+                                class="bg-sage-green text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all transform hover:scale-105">Find
+                                us there →</button>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl text-gray-800 mb-2">India FOSS</h3>
-                        <p class="text-sm sm:text-base text-gray-700 font-bold mb-2">September 20-21</p>
-                        <p class="text-sm sm:text-base text-gray-600 mb-6">NIMHANS, Bengaluru</p>
-                        <button
-                            class="bg-sage-green text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all transform hover:scale-105">Find
-                            us there →</button>
+    
+                        <div class="flex justify-center items-center my-8">
+                            <span class="text-white text-4xl font-title">Or</span>
+                        </div>
+    
+                        <h2 class="text-center text-4xl sm:text-5xl text-white mb-6">domesticated at home</h2>
+                        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
+                            <h3 class="text-2xl sm:text-3xl text-gray-800 mb-6">Coming Soon</h3>
+                            <div class="space-y-3 min-h-[105px]">
+                                <!-- Content removed as per request -->
+                            </div>
+                            <button
+                                class="bg-electric-coral text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-red-600 transition-all transform hover:scale-105 mt-6"
+                                onclick="router.goTo('interest')">
+                                Contact The Toymaker
+                            </button>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
-                        <h3 class="text-2xl sm:text-3xl text-gray-800 mb-6">Coming Soon</h3>
-                        <div class="space-y-3">
-                            <p class="text-sm sm:text-base text-gray-700 font-bold">HRI 2025 • Melbourne</p>
-                            <p class="text-sm sm:text-base text-gray-700 font-bold">Green Schools • Orlando</p>
-                            <p class="text-sm sm:text-base text-gray-700 font-bold">IEEE GreenTech • Denver</p>
+    
+                    <!-- Desktop/Tablet Layout -->
+                    <div class="hidden md:grid grid-cols-2 gap-8 items-stretch">
+                        <!-- Left Card -->
+                        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-left flex flex-col">
+                            <div class="flex-grow">
+                                 <div class="flex items-center space-x-3 mb-4">
+                                    <div class="w-4 h-4 bg-electric-coral rounded-full bounce-play"></div><span
+                                        class="text-electric-coral font-black text-sm uppercase">Next Stop</span>
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl text-gray-800 mb-2">India FOSS</h3>
+                                <p class="text-sm sm:text-base text-gray-700 font-bold mb-2">September 20-21</p>
+                                <p class="text-sm sm:text-base text-gray-600 mb-6">NIMHANS, Bengaluru</p>
+                            </div>
+                            <button
+                                class="bg-sage-green text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all transform hover:scale-105 self-start">Find
+                                us there →</button>
                         </div>
-                        <p class="text-deep-teal text-xs sm:text-sm mt-6 font-medium">Wherever robots meet
-                            sustainability</p>
+                        <!-- Right Card -->
+                        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg flex flex-col">
+                            <div class="flex-grow">
+                                <h3 class="text-2xl sm:text-3xl text-gray-800 mb-6">Coming Soon</h3>
+                                <!-- Empty space to match height -->
+                            </div>
+                            <button
+                                class="bg-electric-coral text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-red-600 transition-all transform hover:scale-105 self-start"
+                                onclick="router.goTo('interest')">
+                                Contact The Toymaker
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -781,7 +828,7 @@
                                         teamwork and fun.</p>
                                     <p><strong>Research Philosophy:</strong> "If it doesn't invite participation, what's
                                         the point?"</p>
-                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'reelin'})" class="text-purple font-bold underline hover:text-deep-teal">Reelin'</a></p>
+                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'reelin'})" class="text-purple font-bold underline hover:text-emerald-700">Reelin'</a></p>
                                 </div>
                             </div>
                         </div>
@@ -791,7 +838,7 @@
                 <div id="zelda-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
-                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-deep-teal w-full max-w-3xl">
+                            class="bg-white rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border-l-4 sm:border-l-8 border-emerald-700 w-full max-w-3xl">
                             <div class="flex flex-col items-center mb-4 sm:mb-6 space-y-4">
                                 <div class="cat-flipper-container w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 relative">
                                     <div class="cat-flipper relative w-full h-full">
@@ -806,7 +853,7 @@
                                     </div>
                                 </div>
                                 <span
-                                    class="bg-deep-teal text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Chief
+                                    class="bg-emerald-700 text-white px-2 py-1 sm:px-3 sm:py-1 lg:px-4 lg:py-2 rounded-full text-xs sm:text-sm font-black uppercase">Chief
                                     Perfectionist</span>
                             </div>
                             <div class="text-center lg:text-left">
@@ -823,7 +870,7 @@
                                         strike.</p>
                                     <p><strong>Research Philosophy:</strong> "If it doesn't please me, it has no
                                         business existing in my vicinity."</p>
-                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'rover'})" class="text-deep-teal font-bold underline hover:text-purple">Rover</a></p>
+                                    <p><strong>Current Project:</strong> <a href="#products" onclick="event.preventDefault(); router.goTo('products', {scrollTo: 'rover'})" class="text-emerald-700 font-bold underline hover:text-purple">Rover</a></p>
                                 </div>
                             </div>
                         </div>
@@ -900,7 +947,7 @@
                             <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Which toy caught your
                                 attention?</label>
                             <select name="toy_interest"
-                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                 required>
                                 <option value="">Choose your chaos...</option>
                                 <option value="reelin">Reelin - For cooperative hunting experiments</option>
@@ -914,25 +961,25 @@
                             <div><label
                                     class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Name</label><input
                                     type="text" name="name"
-                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                     placeholder="Human name here" required></div>
                             <div><label
                                     class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Email</label><input
                                     type="email" name="email"
-                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                     placeholder="your@email.com" required></div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div><label
                                     class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">City</label><input
                                     type="text" name="city"
-                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                     placeholder="Bangalore, Mumbai, etc."></div>
                             <div>
                                 <label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">How did you hear
                                     about us?</label>
                                 <select name="referral_source"
-                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base">
+                                    class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base">
                                     <option value="">Choose one...</option>
                                     <option value="instagram">Instagram</option>
                                     <option value="word-of-mouth">Friend/Word of mouth</option>
@@ -944,19 +991,19 @@
                         </div>
                         <div><label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Tell us about your
                                 research subjects</label><textarea name="cat_info" rows="3"
-                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                 placeholder="Species, ages, personalities..."></textarea></div>
                         <div><label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">What's your biggest
                                 frustration with current cat toys?</label><textarea name="current_frustrations" rows="2"
-                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                 placeholder="They break too fast, cats get bored..."></textarea></div>
                         <div><label class="block text-gray-700 font-bold mb-2 text-sm sm:text-base">Anything else we
                                 should know?</label><textarea name="additional_notes" rows="2"
-                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-deep-teal font-medium text-sm sm:text-base"
+                                class="w-full p-3 sm:p-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-700 font-medium text-sm sm:text-base"
                                 placeholder="Questions, special requests..."></textarea></div>
                         <div class="text-center">
                             <button type="submit"
-                                class="bg-deep-teal text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-teal-700 transition-all transform hover:scale-105">Count
+                                class="bg-emerald-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-emerald-600 transition-all transform hover:scale-105">Count
                                 Me In! 🎯</button>
                             <p class="text-gray-500 text-xs sm:text-sm mt-4">We'll only email you about toy launches and
                                 research updates. Promise.</p>
@@ -977,7 +1024,7 @@
             </svg>
         </button>
         <button id="scroll-down-btn" onclick="scrollPageDown()"
-            class="bg-deep-teal text-white w-12 h-12 rounded-full shadow-lg hover:bg-teal-700 focus:outline-none transform hover:scale-110 transition-transform border-2 border-white">
+            class="bg-emerald-700 text-white w-12 h-12 rounded-full shadow-lg hover:bg-emerald-600 focus:outline-none transform hover:scale-110 transition-transform border-2 border-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -1027,9 +1074,9 @@
                 price: "₹450",
                 emoji: "🎣",
                 tagline: "An anthropological study in cooperative chaos",
-                thoughtProcess: "An organic fishing apparatus developed in collaboration with <a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'gwilo-section'})\" class=\"text-purple font-bold underline hover:text-deep-teal cursor-pointer\">Gwilo</a>. Made from bamboo that grew up wanting to be a fishing rod, paired with a line that asks for no judgement when it breaks.",
+                thoughtProcess: "An organic fishing apparatus developed in collaboration with <a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'gwilo-section'})\" class=\"text-purple font-bold underline hover:text-emerald-700\">Gwilo</a>. Made from bamboo that grew up wanting to be a fishing rod, paired with a line that asks for no judgement when it breaks.",
                 technical: "Designed to die after approximately 85 sessions of quality chaos. Comes with extra string and bait designed for inter-species play, and a 3-month warranty because we believe in second chances.",
-                bg: "bg-deep-teal",
+                bg: "bg-emerald-700",
                 hover: "hover:rotate-1"
             },
             rover: {
@@ -1038,9 +1085,9 @@
                 price: "₹3,000",
                 emoji: "🭀",
                 tagline: "For quantum hunting experiments",
-                thoughtProcess: "<a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'zelda-section'})\" class=\"text-deep-teal font-bold underline hover:text-purple cursor-pointer\">Zelda</a> has… exacting standards for live prey simulation. The Rover aims to achieve the mathematical perfection of The Hunt. The Rover is a modified micro mouse engineered to Zelda's specifications... resulting in nothing less than perfection in every movement pattern.",
+                thoughtProcess: "<a href=\"#cats\" onclick=\"event.preventDefault(); router.goTo('cats', {selectedCatId: 'zelda-section'})\" class=\"text-emerald-700 font-bold underline hover:text-purple cursor-pointer\">Zelda</a> has… exacting standards for live prey simulation. The Rover aims to achieve the mathematical perfection of The Hunt. The Rover is a modified micro mouse engineered to Zelda's specifications... resulting in nothing less than perfection in every movement pattern.",
                 technical: null,
-                bg: "bg-deep-teal",
+                bg: "bg-emerald-700",
                 hover: "hover:-rotate-1"
             },
             rollin: {
@@ -1306,7 +1353,7 @@
                 { "step": "2", "icon": "lightbulb", "color": "text-warm-ochre", "title": "Hypothesize", "text": "Ask 'Ok what if this BUT MORE?'" },
                 { "step": "3", "icon": "construction", "color": "text-sage-green", "title": "Build", "text": "Create prototypes." },
                 { "step": "4", "icon": "pets", "color": "text-purple", "title": "Test", "text": "Present to focus group. Await verdict." },
-                { "step": "5", "icon": "sync", "color": "text-deep-teal", "title": "Iterate", "text": "Adjust based on feline feedback." },
+                { "step": "5", "icon": "sync", "color": "text-emerald-700", "title": "Iterate", "text": "Adjust based on feline feedback." },
                 { "step": "6", "icon": "celebration", "color": "text-electric-coral", "title": "Release", "text": "Share with the world, await judgment." }
             ];
 
@@ -1447,6 +1494,19 @@
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(runDraw, 150);
             });
+        }
+        function setRandomFavicon() {
+            const favicons = [
+                'images/zelda_nobg.png',
+                'images/cloud_nobg.png',
+                'images/gwi_nobg.png'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * favicons.length);
+            const favicon = document.getElementById('favicon');
+            if (favicon) {
+                favicon.href = favicons[randomIndex];
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
