@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronin Toys - We Take Play Seriously</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link id="favicon" rel="icon" href="images/gwi_nobg.png">
     <script>
         tailwind.config = {
             theme: {
@@ -449,6 +450,7 @@
             }
         }
 
+        /* -- FIX: Added rule for mobile menu open state -- */
         #mobile-menu.is-open {
             transform: scaleY(1);
         }
@@ -456,12 +458,11 @@
 </head>
 
 <body class="bg-warm-cream text-gray-800 pt-16">
-    <!-- Navigation Bar -->
     <nav class="bg-purple fixed top-0 left-0 right-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-16">
                 <h1 class="text-white text-2xl cursor-pointer" onclick="router.goTo('home')">Ronin Toys</h1>
-                <div class="hidden lg:flex items-center space-x-4">
+                <div class="hidden md:flex space-x-6">
                     <a href="#home" onclick="router.goTo('home')"
                         class="text-white hover:text-warm-ochre font-medium">Home</a>
                     <a href="#products" onclick="router.goTo('products')"
@@ -473,13 +474,8 @@
                     <a href="https://instagram.com/theronintoymaker" target="_blank"
                         class="text-white hover:text-warm-ochre font-medium underline inline-flex items-center gap-1"><i
                             class="fab fa-instagram"></i><span>Follow Us!</span></a>
-                    <button
-                        class="bg-emerald-700 text-white px-4 py-2 rounded-full font-bold hover:bg-emerald-600 transition-all transform hover:scale-110"
-                        onclick="router.goTo('interest')">
-                        Get Notified
-                    </button>
                 </div>
-                <div class="lg:hidden">
+                <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-white hover:text-warm-ochre focus:outline-none"
                         onclick="toggleMobileMenu()">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -488,10 +484,15 @@
                         </svg>
                     </button>
                 </div>
+                <button
+                    class="hidden md:block bg-emerald-700 text-white px-4 py-2 rounded-full font-bold hover:bg-emerald-600 transition-all transform hover:scale-110"
+                    onclick="router.goTo('interest')">
+                    Get Notified
+                </button>
             </div>
         </div>
         <div id="mobile-menu"
-            class="lg:hidden bg-emerald-700 absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
+            class="md:hidden bg-emerald-700 absolute top-full left-0 w-full transition-transform duration-300 ease-in-out transform scale-y-0 origin-top">
             <div class="px-4 sm:px-6 pt-2 pb-4 space-y-3">
                 <a href="#home" onclick="router.goTo('home'); closeMobileMenu()"
                     class="block text-white hover:text-warm-ochre font-medium py-2">Home</a>
@@ -510,7 +511,6 @@
         </div>
     </nav>
 
-    <!-- Home Page -->
     <div id="home" class="page">
         <section class="min-h-screen bg-electric-coral flex items-center relative overflow-hidden">
             <div data-cat-target="zelda-section"
@@ -598,7 +598,6 @@
             </div>
         </section>
 
-        <!-- Scientific Approach Section -->
         <section id="scientific-approach-section" class="bg-bluey-orange py-16 sm:py-20 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12 sm:mb-16">
@@ -607,39 +606,32 @@
                         chaos</p>
                 </div>
 
-                <!-- Mobile & Tablet View (<1024px) -->
                 <div id="scientific-approach-mobile" class="lg:hidden relative">
                     <svg id="connector-svg-mobile" class="absolute top-0 left-0 w-full h-full hidden sm:block"
                         style="z-index: 0; pointer-events: none;"></svg>
                     <div id="scientific-approach-mobile-grid"
                         class="flex flex-col items-center max-w-sm mx-auto sm:max-w-none">
-                        <!-- Steps will be dynamically injected here for simplicity -->
-                    </div>
+                        </div>
                 </div>
 
-                <!-- Desktop View (>=1024px) -->
                 <div id="scientific-approach-desktop" class="hidden lg:block relative">
                     <svg id="connector-svg-desktop" class="absolute top-0 left-0 w-full h-full"
                         style="z-index: 0; pointer-events: none;"></svg>
                     <div id="scientific-approach-desktop-grid">
-                        <!-- Cards will be dynamically injected here for simplicity -->
-                    </div>
+                        </div>
                 </div>
             </div>
         </section>
 
         <section class="bg-bluey-blue py-16 sm:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
-                <!-- Desktop/Tablet Titles -->
                 <div class="hidden md:flex justify-between items-baseline mb-8">
                     <h2 class="text-4xl sm:text-5xl text-white text-center w-5/12">Catch us in the wild</h2>
                     <span class="text-white text-4xl font-title">Or</span>
                     <h2 class="text-4xl sm:text-5xl text-white text-center w-5/12">domesticated at home</h2>
                 </div>
     
-                <!-- Wrapper for both mobile and desktop cards -->
                 <div>
-                    <!-- Mobile Layout -->
                     <div class="md:hidden">
                         <h2 class="text-center text-4xl sm:text-5xl text-white mb-6">Catch us in the wild</h2>
                         <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-left mb-8">
@@ -663,8 +655,7 @@
                         <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg">
                             <h3 class="text-2xl sm:text-3xl text-gray-800 mb-6">Coming Soon</h3>
                             <div class="space-y-3 min-h-[105px]">
-                                <!-- Content removed as per request -->
-                            </div>
+                                </div>
                             <button
                                 class="bg-electric-coral text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-red-600 transition-all transform hover:scale-105 mt-6"
                                 onclick="router.goTo('interest')">
@@ -673,9 +664,7 @@
                         </div>
                     </div>
     
-                    <!-- Desktop/Tablet Layout -->
                     <div class="hidden md:grid grid-cols-2 gap-8 items-stretch">
-                        <!-- Left Card -->
                         <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg text-left flex flex-col">
                             <div class="flex-grow">
                                  <div class="flex items-center space-x-3 mb-4">
@@ -690,12 +679,10 @@
                                 class="bg-sage-green text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-green-600 transition-all transform hover:scale-105 self-start">Find
                                 us there →</button>
                         </div>
-                        <!-- Right Card -->
                         <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg flex flex-col">
                             <div class="flex-grow">
                                 <h3 class="text-2xl sm:text-3xl text-gray-800 mb-6">Coming Soon</h3>
-                                <!-- Empty space to match height -->
-                            </div>
+                                </div>
                             <button
                                 class="bg-electric-coral text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-red-600 transition-all transform hover:scale-105 self-start"
                                 onclick="router.goTo('interest')">
@@ -709,7 +696,6 @@
 
     </div>
 
-    <!-- Products Page -->
     <div id="products" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -723,7 +709,6 @@
         </section>
     </div>
 
-    <!-- About Page -->
     <div id="about" class="page">
         <section class="min-h-screen bg-sage-green py-16 sm:py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -781,7 +766,6 @@
         </section>
     </div>
 
-    <!-- Cats/Research Team Page -->
     <div id="cats" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -791,7 +775,6 @@
                         class="text-lg sm:text-xl md:text-2xl text-gray-600 font-medium latin-fade font-subtitle">
                         "Humani intelligentes sunt, sed assidua vigilantia indigent"</p>
                 </div>
-                <!-- Gwilo Section -->
                 <div id="gwilo-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
@@ -833,7 +816,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Zelda Section -->
                 <div id="zelda-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
@@ -875,7 +857,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Cloud Section -->
                 <div id="cloud-section" class="mb-12 sm:mb-16 lg:mb-20">
                     <div class="grid grid-cols-1 lg:grid-cols-1 justify-items-center gap-6 sm:gap-8 lg:gap-12 items-center">
                         <div
@@ -931,7 +912,6 @@
         </section>
     </div>
 
-    <!-- Interest/Contact Page -->
     <div id="interest" class="page">
         <section class="min-h-screen bg-warm-cream py-16 sm:py-20">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -1013,7 +993,6 @@
         </section>
     </div>
 
-    <!-- Scroll Navigation Buttons -->
     <div id="scroll-nav" class="fixed bottom-5 right-5 z-50 flex flex-col items-center space-y-2">
         <button id="scroll-up-btn" onclick="scrollToTop()"
             class="hidden bg-purple text-white w-12 h-12 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none transform hover:scale-110 transition-transform border-2 border-white">
@@ -1038,24 +1017,19 @@
         </button>
     </div>
 
-    <!-- START: MODIFIED Footer -->
     <footer class="bg-purple text-white py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <!-- Left side: Copyright -->
                 <div class="text-center md:text-left text-sm text-gray-300">
                     <p>&copy; 2024 Ronin Toys. All rights reserved.</p>
                     <p>We take play, and our planet, seriously.</p>
                 </div>
-                <!-- Right side: Links -->
                 <div class="flex flex-col items-center md:items-end gap-3">
-                    <!-- Instagram Handle -->
                     <a href="https://instagram.com/theronintoymaker" target="_blank"
                         class="text-gray-300 hover:text-white transition inline-flex items-center gap-2 text-sm">
                         <i class="fab fa-instagram"></i>
                         <span>@theronintoymaker</span>
                     </a>
-                    <!-- Restyled Carbon Banner -->
                     <a href="https://www.websitecarbon.com/website/nandapadmanabhan-com/" target="_blank"
                         class="inline-flex items-center space-x-2 text-white hover:text-sage-green transition duration-300 group">
                         <span class="text-sm font-medium group-hover:underline">🌱 This website is cleaner than 85% of websites tested</span>
@@ -1064,7 +1038,6 @@
             </div>
         </div>
     </footer>
-    <!-- END: MODIFIED Footer -->
     <script>
         const toys = {
             reelin: {
@@ -1131,8 +1104,10 @@
 
                 targetPage.classList.add('active');
                 window.location.hash = pageId;
-                
+
+                // Handle scrolling to specific sections
                 if (pageId === 'products' && params.scrollTo) {
+                    // Timeout allows the page to become visible before scrolling
                     setTimeout(() => {
                         const targetElement = document.getElementById(params.scrollTo);
                         if (targetElement) {
@@ -1408,12 +1383,10 @@
                 marker.setAttribute('id', `arrowhead-${containerId}`);
                 marker.setAttribute('viewBox', '-0 -5 10 10'); marker.setAttribute('refX', 5);
                 marker.setAttribute('refY', 0); marker.setAttribute('orient', 'auto');
-                marker.setAttribute('markerWidth', 5);
-                marker.setAttribute('markerHeight', 5);
+                marker.setAttribute('markerWidth', 5); marker.setAttribute('markerHeight', 5);
                 marker.setAttribute('xoverflow', 'visible');
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.setAttribute('d', 'M 0,-5 L 10 ,0 L 0,5');
-                path.setAttribute('fill', 'white');
+                path.setAttribute('d', 'M 0,-5 L 10 ,0 L 0,5'); path.setAttribute('fill', 'white');
                 path.style.stroke = 'none';
                 marker.appendChild(path);
 
@@ -1494,7 +1467,20 @@
                 resizeTimeout = setTimeout(runDraw, 150);
             });
         }
-        
+        function setRandomFavicon() {
+            const favicons = [
+                'images/zelda_nobg.png',
+                'images/cloud_nobg.png',
+                'images/gwi_nobg.png'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * favicons.length);
+            const favicon = document.getElementById('favicon');
+            if (favicon) {
+                favicon.href = favicons[randomIndex];
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             router.init();
             populateProductsPage();
@@ -1506,4 +1492,5 @@
 
     </script>
 </body>
+
 </html>
